@@ -50,18 +50,10 @@
       li:hover {
         background-color: rgba(0, 0, 255, 0.732);
       }
-
-      li:nth-child(5) .hover-text {
-        display: none;
+      li:nth-child(5):hover::after {
+        content: "我是最后一个";
       }
 
-      li:nth-child(5):hover .original-text {
-        display: none;
-      }
-
-      li:nth-child(5):hover .hover-text {
-        display: inline;
-      }
     </style>
   </head>
 
@@ -77,10 +69,7 @@
           <li>列表项2</li>
           <li>列表项3</li>
           <li>列表项4</li>
-          <li>
-            <span class="original-text">列表项5</span
-            ><span class="hover-text">我是最后一个</span>
-          </li>
+          <li>列表项5</li>
         </ul>
       </div>
     </div>
