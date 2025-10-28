@@ -1,0 +1,81 @@
+<!-- 此文件是为了题目六：选择器综合应用之后创建的，前面的题见上一文件 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    .container {
+        background-color: lightgray;
+    }
+    .box1 {
+        width: 200px;
+        height: 200px;
+        padding: 10px;
+        border: 1px solid black;
+        box-sizing: border-box;
+        /* !这里设置border-box要用box-sizing */
+        margin: 0 auto;
+        float: left;
+        
+    }
+    .container::after {
+        content: "";
+        display: block;
+        clear: both;
+
+    }
+    .box2 {
+        width: 200px;
+        height: 200px;
+        padding: 10px;
+        border: 1px solid black;
+        box-sizing: border-box;
+        /* !这里设置border-box要用box-sizing */
+        margin: 0 auto;
+        float: left;
+    }
+    .box3 {
+        width: 200px;
+        height: 200px;
+        padding: 10px;
+        border: 1px solid black;
+        box-sizing: border-box;
+        margin: 0 auto;
+        float: left;
+    }
+    p {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        /* ！上面三个属性必须写在文本标签上，如果写在父集不行 */
+    }
+    .box1,
+    .box2 {
+        font-size: 50px;
+    }
+    [type="text"] {
+        border: 3px solid blue;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+    </div>
+    <div class="form">
+        <input type="text">
+        <input type="text">
+    </div>
+</body>
+
+</html>

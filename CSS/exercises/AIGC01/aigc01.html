@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    h1 {
+        color: red;
+        font-size: 48px;
+        text-align: center;
+    }
+
+    .container {
+        background-color: lightgray;
+    }
+    .box1 {
+        width: 200px;
+        height: 200px;
+        padding: 10px;
+        border: 1px solid black;
+        box-sizing: border-box;
+        /* !这里设置border-box要用box-sizing */
+        margin: 0 auto;
+        float: left;
+        
+    }
+    .container::after {
+        content: "";
+        display: block;
+        clear: both;
+
+    }
+    .box2 {
+        width: 0px;
+        height: 0px;
+        padding: 0px;
+        border-left: 100px solid transparent;
+        border-right: 100px solid transparent;
+        border-top: 100px solid transparent;
+        border-bottom: 100px solid tomato;
+        box-sizing: border-box;
+        margin: 0 auto;
+        float: left;
+    }
+    .box3 {
+        width: 200px;
+        height: 200px;
+        padding: 10px;
+        border: 1px solid black;
+        box-sizing: border-box;
+        margin: 0 auto;
+        float: left;
+    }
+    p {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        /* ！上面三个属性必须写在文本标签上，如果写在父集不行 */
+    }
+</style>
+
+<body>
+    <h1>This is h1 title</h1>
+    <div class="container">
+        <div class="box1">
+            <!-- 类名可以有多个，但是类只能有一个，多个类名之间用空格隔开 -->
+            <p>之过个惊应其何和，起洋便，五狂郭褒光仇他蒲派句友倒的那皇洪，生唯在张自然了得馆骂者系秦，对书人放陛希生书苦，而才救方起案仍陛勇之狂唯妙灰收发知，我才选娟归吞恶一，子今即的宋为为入锐，说处洪洪秦才上洪使反，如洪曰娘前沫领登，予匹尹将丰尘洪范同下下德不上，极。
+            </p>
+        </div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</body>
+
+</html>
