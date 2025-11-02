@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <!--
+    个人博客模板（零依赖 / 适合新手临摹）
+    目标：
+    1) 画面简洁精美，富有设计感。
+    2) 内容整洁不复杂，便于新手照敲练手。
+    3) 不使用任何第三方框架、脚本与字体（完全本地运行）。
+    4) 注释清晰详细，帮助理解布局与语义化结构。
+    5) 遵循 HTML 语义化与可访问性（a11y）规范。
+
+    使用方法：
+    - 直接保存为 index.html，用浏览器打开即可。
+    - 可将“示例文章”替换为你自己的内容与链接。
+  -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="一个零依赖、语义化、简洁美观的个人博客模板，适合新手练习与临摹。" />
+    <title>我的个人博客 · 简洁模板</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ======================== 顶部导航 ======================== -->
+    <header class="site-header" role="banner">
+        <div class="container nav-wrap">
+            <!-- 站点品牌（可点击返回首页）-->
+            <a class="brand" href="#" aria-label="主页">
+                <span class="brand-logo" aria-hidden="true"></span>
+                <span class="brand-title">我的个人博客</span>
+            </a>
+
+            <!-- 语义化导航，aria-label 声明用途 -->
+            <nav aria-label="主导航">
+                <!--
+          注：当前页面的链接使用 aria-current="page" 标识，
+          便于读屏用户理解所在位置。
+        -->
+                <ul>
+                    <li><a href="#" aria-current="page">首页</a></li>
+                    <li><a href="#posts">文章</a></li>
+                    <li><a href="#about">关于</a></li>
+                    <li><a href="#contact">联系</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ======================== 英雄区（简介） ======================== -->
+    <main id="content" class="container" role="main">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="card">
+                <span class="eyebrow">写作 · 前端 · 生活</span>
+                <h1 id="hero-title">把想法写清楚，把代码写漂亮。</h1>
+                <p>这里记录我对前端与设计的理解、简洁的小技巧，以及一些生活灵感。模板零依赖，适合新手完整照敲并在此基础上扩展。</p>
+            </div>
+        </section>
+
+        <!-- ======================== 文章列表（示例） ======================== -->
+        <section id="posts" aria-labelledby="posts-title">
+            <header>
+                <h2 id="posts-title">最新文章</h2>
+            </header>
+
+            <div class="posts-grid" role="list">
+                <!--
+          语义化 article：每篇文章一张卡片。
+          可将 <a> 的 href 指向你的实际文章页面或外链。
+        -->
+                <article class="post-card" role="listitem">
+                    <header>
+                        <h3><a href="#">如何做一个语义化且优雅的首页结构</a></h3>
+                    </header>
+                    <p>从 header/nav/main/footer 到 section/article 的取舍，教你构建清晰的信息层级与良好的可访问性基础。</p>
+                    <footer class="meta">
+                        <time datetime="2025-10-20" title="发布日期">2025-10-20</time>
+                        <span class="tag">HTML</span>
+                        <span class="tag">Accessibility</span>
+                    </footer>
+                </article>
+
+                <article class="post-card" role="listitem">
+                    <header>
+                        <h3><a href="#">用少量 CSS 打造高级感：变量、阴影与留白</a></h3>
+                    </header>
+                    <p>通过 CSS 变量统一风格，用合适的阴影与圆角提升质感，再配合留白与网格让信息更易读。</p>
+                    <footer class="meta">
+                        <time datetime="2025-10-12">2025-10-12</time>
+                        <span class="tag">CSS</span>
+                        <span class="tag">Design</span>
+                    </footer>
+                </article>
+
+                <article class="post-card" role="listitem">
+                    <header>
+                        <h3><a href="#">初学者也能用的响应式网格布局</a></h3>
+                    </header>
+                    <p>一段简洁的 grid 模板就能适配多列布局，无需媒体查询即可让卡片自然流动与自适应。</p>
+                    <footer class="meta">
+                        <time datetime="2025-09-30">2025-09-30</time>
+                        <span class="tag">Grid</span>
+                        <span class="tag">Responsive</span>
+                    </footer>
+                </article>
+            </div>
+        </section>
+
+        <!-- ======================== 关于（个人简介） ======================== -->
+        <section id="about" class="about" aria-labelledby="about-title">
+            <div class="panel">
+                <h2 id="about-title">关于我</h2>
+                <p>前端学习者，关注语义化与可访问性，热衷于用最少的依赖做出结构清晰、细节讲究的网页。这个模板力求“少即是多”，适合你逐行理解与亲手临摹。</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- ======================== 页脚（联系信息） ======================== -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container foot-grid">
+            <div>
+                <strong>我的个人博客</strong>
+                <p>© <span id="year">2025</span> · 以清晰的结构与简洁的样式记录知识。</p>
+            </div>
+            <div id="contact">
+                <address>
+                    <div class="social" aria-label="社交与联系">
+                        <!-- 仅示例：替换为你的实际链接或邮箱 -->
+                        <a href="mailto:hi@example.com" rel="me" aria-label="邮件联系">
+                            <!-- 简单 SVG 图标（内联，避免外部依赖） -->
+                            <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill="currentColor"
+                                    d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm2 0 8 6 8-6H4zm16 12V9.236l-8 6-8-6V18z" />
+                            </svg>
+                            <span>hi@example.com</span>
+                        </a>
+                        <a href="#" rel="me noopener" aria-label="我的作品集">
+                            <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill="currentColor" d="M4 4h7v2H6v10h10v-5h2v7H4z" />
+                                <path fill="currentColor"
+                                    d="M13 4h7v7h-2V7.414l-9.293 9.293-1.414-1.414L16.586 6H13z" />
+                            </svg>
+                            <span>作品集</span>
+                        </a>
+                    </div>
+                </address>
+            </div>
+        </div>
+
+        <!--
+      说明：下方仅有一行极简的原生 JS，用来更新年份，
+      不是第三方脚本，且可直接删除而不影响页面样式与结构。
+    -->
+        <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
+    </footer>
+</body>
+
+</html>

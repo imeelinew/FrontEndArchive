@@ -1,0 +1,416 @@
+/* ======================== 全局设计变量（可按需微调） ======================== */
+:root {
+    /* 色彩（浅色主题） */
+    --bg: #f6f7f9;
+    /* 页面背景 */
+    --card: #ffffff;
+    /* 卡片底色 */
+    --text: #1a1a1a;
+    /* 正文颜色 */
+    --muted: #5f6b7a;
+    /* 次要文字 */
+    --line: #e5e7eb;
+    /* 分隔线 */
+    --brand: #2f6fed;
+    /* 品牌主色 */
+    --accent: #8b5cf6;
+    /* 强调色，用于小装饰 */
+
+    /* 阴影与圆角 */
+    --radius: 16px;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+    /* 容器宽度与间距 */
+    --w: 1080px;
+    --space-1: 6px;
+    --space-2: 12px;
+    --space-3: 18px;
+    --space-4: 24px;
+    --space-5: 32px;
+    --space-6: 48px;
+
+    /* 字体与排版（使用系统字体栈，避免外链字体） */
+    --font: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "PingFang SC", "Noto Sans CJK SC", "Hiragino Sans GB", "Microsoft YaHei",
+        Arial, "Helvetica Neue", Helvetica, sans-serif;
+    --fz-1: clamp(14px, 1.3vw, 16px);
+    /* 基准文字大小 */
+    --fz-2: clamp(16px, 1.6vw, 18px);
+    /* 小标题 */
+    --fz-3: clamp(20px, 2.4vw, 24px);
+    /* 标题3 */
+    --fz-4: clamp(26px, 3.4vw, 34px);
+    /* 标题2 */
+    --fz-5: clamp(32px, 4.2vw, 44px);
+    /* 主标题 */
+}
+
+/* 深色模式（跟随系统，不使用 JS 开关以保持零依赖） */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0f1216;
+        --card: #141922;
+        --text: #e6e6e6;
+        --muted: #97a3b3;
+        --line: #232a35;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+}
+
+/* ======================== 基础重置与可访问性 ======================== */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font);
+    font-size: var(--fz-1);
+    line-height: 1.6;
+    color: var(--text);
+    background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(47, 111, 237, 0.08), transparent 55%),
+        radial-gradient(900px 500px at 110% 0%, rgba(139, 92, 246, 0.08), transparent 50%),
+        var(--bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 键盘可见的聚焦环，提升可访问性 */
+:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--brand) 70%, white);
+    outline-offset: 2px;
+    border-radius: 6px;
+}
+
+/* 容器：统一控制左右边距与最大宽度 */
+.container {
+    width: min(100% - 2rem, var(--w));
+    margin-inline: auto;
+}
+
+
+.skip-link:focus-visible {
+    left: 12px;
+    top: 12px;
+    width: auto;
+    height: auto;
+    padding: 8px 12px;
+    background: var(--card);
+    color: var(--text);
+    box-shadow: var(--shadow);
+    border-radius: 8px;
+}
+
+/* ======================== 顶部导航 ======================== */
+header.site-header {
+    position: sticky;
+    /* 轻粘顶，提升导航可见性 */
+    top: 0;
+    background: color-mix(in srgb, var(--card) 92%, transparent);
+    backdrop-filter: saturate(1.2) blur(6px);
+    border-bottom: 1px solid var(--line);
+    z-index: 10;
+}
+
+.nav-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding: var(--space-3) 0;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.brand-logo {
+    /* 简洁的几何 Logo（纯 CSS + SVG） */
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: conic-gradient(from 210deg, var(--brand), var(--accent));
+    box-shadow: 0 6px 14px rgba(47, 111, 237, 0.25);
+}
+
+.brand-title {
+    font-size: var(--fz-2);
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+nav[aria-label="主导航"] ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: var(--space-4);
+}
+
+nav[aria-label="主导航"] a {
+    text-decoration: none;
+    color: var(--muted);
+    padding: 6px 4px;
+    border-radius: 8px;
+    position: relative;
+}
+
+/* 下划线动效：简洁但有质感 */
+nav[aria-label="主导航"] a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--brand), var(--accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 260ms ease;
+}
+
+nav[aria-label="主导航"] a:hover::after,
+nav[aria-label="主导航"] a:focus-visible::after,
+nav[aria-label="主导航"] a[aria-current="page"]::after {
+    transform: scaleX(1);
+}
+
+/* ======================== 英雄区（站点简介） ======================== */
+.hero {
+    padding: clamp(40px, 6vw, 88px) 0;
+}
+
+.hero .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: clamp(18px, 4vw, 36px);
+}
+
+.eyebrow {
+    /* 眉题：小型标签 */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.eyebrow::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--brand);
+}
+
+.hero h1 {
+    font-size: var(--fz-5);
+    margin: 8px 0 10px;
+    line-height: 1.15;
+}
+
+.hero p {
+    font-size: var(--fz-2);
+    color: var(--muted);
+    margin: 0;
+}
+
+/* ======================== 文章列表（卡片网格） ======================== */
+section#posts {
+    padding: var(--space-6) 0;
+}
+
+section#posts>header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: var(--space-4);
+}
+
+section#posts h2 {
+    font-size: var(--fz-4);
+    margin: 0;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-4);
+}
+
+.post-card {
+    display: grid;
+    gap: 10px;
+    grid-template-rows: auto 1fr auto;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 18px;
+    box-shadow: var(--shadow);
+    transition: translate 220ms ease, box-shadow 220ms ease;
+}
+
+.post-card:hover {
+    translate: 0 -2px;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, .12);
+}
+
+.post-card h3 {
+    font-size: var(--fz-3);
+    margin: 6px 0 0;
+}
+
+.post-card h3 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.post-card p {
+    color: var(--muted);
+    margin: 0;
+}
+
+.meta {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.tag::before {
+    content: "#";
+    color: var(--brand);
+    font-weight: 700;
+}
+
+/* ======================== 侧栏（可选）与关于区 ======================== */
+.about {
+    padding: var(--space-6) 0;
+}
+
+.about .panel {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: clamp(18px, 4vw, 36px);
+    display: grid;
+    gap: var(--space-3);
+}
+
+.about h2 {
+    font-size: var(--fz-4);
+    margin: 0;
+}
+
+.about p {
+    color: var(--muted);
+    margin: 0;
+}
+
+/* ======================== 页脚 ======================== */
+footer.site-footer {
+    margin-top: var(--space-6);
+    border-top: 1px solid var(--line);
+    padding: var(--space-5) 0 var(--space-6);
+    color: var(--muted);
+}
+
+.foot-grid {
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 720px) {
+    .foot-grid {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+address {
+    font-style: normal;
+}
+
+.social {
+    display: flex;
+    gap: 12px;
+}
+
+.social a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ======================== 细节优化 ======================== */
+/* 减少动效以照顾 prefers-reduced-motion 用户 */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* 可读性与代码块样式（如果将来写博文中有 <pre><code>） */
+pre,
+code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+pre {
+    background: color-mix(in srgb, var(--card) 92%, var(--bg));
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 14px;
+    overflow: auto;
+}
+
+/* 打印优化：移除背景与阴影，提升打印清晰度 */
+@media print {
+    body {
+        background: #fff !important;
+    }
+
+    .hero .card,
+    .post-card,
+    .about .panel {
+        box-shadow: none !important;
+    }
+
+    nav,
+    .social {
+        display: none !important;
+    }
+}

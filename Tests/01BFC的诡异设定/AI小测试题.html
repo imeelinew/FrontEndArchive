@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    .container {
+      border: 2px solid black;
+      overflow: hidden;
+      /* 加这一行就解决了问题 */
+    }
+    .box1 {
+      float: left;
+      width: 200px;
+      height: 200px;
+      background-color: tomato;
+    }
+    .box2 {
+      height: 100px;
+      background-color: skyblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box1"></div>
+    <div class="box2"></div>
+  </div>
+</body>
+</html>
