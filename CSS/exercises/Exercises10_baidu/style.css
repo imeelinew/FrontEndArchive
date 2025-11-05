@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.nav-bar .nav-links li {
+    display: inline-block;
+    list-style: none;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.nav-bar ul {
+    padding-left: 24px;
+    font-size: 0;
+
+}
+
+.nav-bar .nav-links a {
+    text-decoration: none;
+    color: black;
+    margin: 19px 24px 0 0;
+    line-height: 60px;
+}
+
+.nav-bar .nav-links a:hover {
+    color: #315EFB;
+}
+
+.nav-bar {
+    height: 60px;
+    position: relative;
+}
+
+.nav-bar .nav-links img {
+    width: 26px;
+    height: 14px;
+    margin-bottom: -2px;
+
+}
+
+.main-content .search-box img {
+    width: 26px;
+    height: 14px;
+}
+
+.nav-bar .user-info .show-weather-icon img {
+    width: 23px;
+    height: 23px;
+    vertical-align: middle
+}
+
+.nav-bar .user-info .show-pollution-icon {
+    display: inline-block;
+    background-color: rgb(12, 163, 12);
+    width: 23px;
+    height: 14px;
+    border-radius: 10px;
+    line-height: 14px;
+    text-align: center;
+    font-size: 11px;
+    color: white;
+    vertical-align: middle;
+    margin: 0 15px;
+}
+.nav-bar .user-info {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+.user-info .user-setting a{
+    margin-right: 5px;
+}
+.nav-bar .user-info .city-name {
+    font-size: 13px;
+    vertical-align: middle
+}
+
+.nav-bar .user-info .user-profile-pic img {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid black;
+    vertical-align: middle
+}
+
+.nav-bar .user-info .user-name {
+    font-size: 13px;
+}
+
+.nav-bar .user-info .user-setting {
+    font-size: 13px;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.nav-bar .user-info .show-temp {
+    font-size: 13px;
+}
+
+.nav-bar .user-info a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-bar .user-info a:hover {
+    color: rgb(24, 188, 243);
+}
+
+.main-content .search-section .logo {
+    text-align: center;
+
+}
+
+.logo img {
+    width: 270px;
+    height: auto;
+    margin: 5px auto;
+}
+
+.search-box {
+    width: 790px;
+    height: 95px;
+    border: 2px solid rgb(64, 131, 246);
+    border-radius: 20px;
+    margin: 10px auto;
+    position: relative; 
+}
+
+.search-box [type="text"]{
+    border: 0px;
+    height: 20px;
+    margin: 10px 0px 0px 15px;
+    width: 750px;
+    font-size: 15px;
+}
+.search-box [type="text"]:focus{
+    outline: none; 
+}
+
+.search-box .ai-button {
+    width: 103px;
+    height: 42px;
+    border: 1px solid rgba(107, 67, 238, 0.5);
+    border-radius: 15px;
+    color: rgb(171, 85, 246);
+    font-weight: 900;
+    text-align: center;
+    line-height: 42px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    margin: 10px;
+}
+.ai-button a{
+    display: block;  
+    text-decoration: none;
+    color: #4e6ef2;
+}
+.search-box .right-tools-wrapper {
+    position: absolute;
+    right: 140px;
+    bottom: 20px;
+    /* color: #5f5f5f; */
+    scale: 150%;
+    display: flex;
+    gap: 0px;
+}
+.right-tools-wrapper img {
+    filter: grayscale(100%);
+    /* transition: filter 0.3s ease; */
+  }
+  .right-tools-wrapper img:hover {
+    filter: none;
+  }
+.search-box .search-submit-button {
+    width: 108px;
+    height: 44px;
+    background: linear-gradient(to right, #4a7eff, #7b3dff);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 10px;
+    border-radius: 15px;
+    text-align: center;
+    line-height: 44px;
+    font-size: 17px;
+}
+.search-box .search-submit-button a{
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+.search-box .search-submit-button:hover{
+    background: linear-gradient(to right, #326bfb, #5f1af5)
+}
