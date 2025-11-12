@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<link rel="stylesheet" href="style.css">
 
 <body>
     <header>
@@ -51,13 +51,25 @@
                     <input type="text" placeholder="这是一段测试文本">
                     <div class="ai-button">
                         <a href="">
-                            问
-                            <img src="../../assets/ai.png" alt="">
+                            <i class="iconfont icon-AIduihua"></i>
+                            <img src="https://psstatic.cdn.bcebos.com/aife/static/wenAI_1761814195000.png" alt="">
                         </a>
+                        <div class="ai-button-tip">
+                            <span>
+                                点我去文心助手回答，已接入DeepSeek、文心4.5，深入思考提供更优质答案，快来试试吧~
+                            </span>
+                        </div>
                     </div>
                     <div class="right-tools-wrapper">
-                        <a href=""><img id="tool1" src="../../assets/paper-clip.svg" alt=""></a>
-                        <a href=""><img id="tool2" src="../../assets/image.svg" alt=""></a>
+                        <a href=""><img class="tool1" src="../../assets/paper-clip.svg" alt=""></a>
+                        <a href=""><img class="tool2" src="../../assets/image.svg" alt=""></a>
+
+                    </div>
+                    <div class="right-tool1-tip-wrapper">
+                        <span class="right-tool1-tip">快速理解总结文件，支持PDF、Word、Excel、PPT、TXT、Python、Java等，最多10个，最大50MB</span>
+                    </div>
+                    <div class="right-tool2-tip-wrapper">
+                        <span class="right-tool2-tip">一键解读图片内容，支持jpg、png、jpeg等，最多10个，最大10MB</span>
                     </div>
                     <div class="search-submit-button">
                         <a href="">
