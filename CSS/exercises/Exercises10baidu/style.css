@@ -83,15 +83,17 @@
 
 }
 
-.main-content .search-box  .right-tools-wrapper img {
+.main-content .search-box .right-tools-wrapper img {
     width: 26px;
     height: 14px;
 }
+
 .search-box .ai-button img {
     width: 40px;
     vertical-align: middle;
     margin-bottom: 5px;
 }
+
 .nav-bar .user-info .show-weather-icon img {
     width: 23px;
     height: 23px;
@@ -206,11 +208,11 @@
 
 .search-box .ai-button {
     width: 103px;
-    height: 42px;
-    border: 1px solid rgba(107, 67, 238, 0.5);
+    height: 38px;
+    border: 0.5px solid rgba(107, 67, 238, 0.5);
     border-radius: 15px;
     text-align: center;
-    line-height: 42px;   
+    line-height: 38px;
     position: absolute;
     bottom: 0px;
     left: 0px;
@@ -345,7 +347,7 @@
 .search-box .search-submit-button {
     width: 108px;
     height: 44px;
-    background: linear-gradient(to right, #4a7eff, #7b3dff);
+    background: linear-gradient(136deg, #286aff, #4e6ef2, #7274f9, #9f66ff);
     position: absolute;
     right: 0;
     bottom: 0;
@@ -354,6 +356,7 @@
     text-align: center;
     line-height: 44px;
     font-size: 17px;
+    font-weight: 500;
 }
 
 .search-box .search-submit-button a {
@@ -425,8 +428,19 @@
     font-family: "PingFang SC", Arial, sans-serif;
     font-weight: 400;
     padding: 0 15px;
+    position: relative;
 }
-
+.tools-bar button.active::after {
+    content: "";
+    display: block;
+    height: 10px;
+    width: 10px;
+    border-radius: 5px;
+    background-color: red;
+    position: absolute;
+    bottom: 80%;
+    left: 90%;
+}
 .menu-wrapper:hover .menu-list {
     display: block;
 }
