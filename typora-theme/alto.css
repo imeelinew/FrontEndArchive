@@ -1,0 +1,94 @@
+/* 
+ *     Typora Theme - Alto    /    Author - Seeridia
+ *     https://github.com/Seeridia/typora-theme-alto
+ *     
+ *     Version - 2.1.2
+ */
+
+/* 
+ * 主题 配置 / Theme Configuration
+ * -----------------------------
+ */
+
+@import "alto/lapis/lapis.css";
+
+/* 
+ * 导入主题 / Import Theme
+
+--- 内置主题 / Built-in themes ---
+@import "github.css";
+@import "newsprint.css";
+@import "whitey.css";
+@import "pixyll.css";
+
+--- 第三方主题 / Third-party themes ---
+@import "alto/lapis/lapis.css";
+@import "alto/spring/spring.css";
+
+
+默认是 Lapis 主题，你可以在上面的代码中选择你喜欢的主题，然后替换上方的 '@import "lapis.css";' ，重启 Typora 即可。
+The default is Lapis theme, you can choose your favorite theme from the code above and replace '@import "lapis.css";' with the theme you like, then restart Typora.
+
+其他第三方主题请自行下载替换上面的代码，不一定能完全适配，请自行测试。也可以提交 issue 请求适配，或者发起 PR 贡献代码。
+Other third-party themes can be downloaded and replaced with the code above, but they may not be fully adapted, please test them by yourself.
+You can also request the adaptation by submitting an issue or submitting a PR to contribute code.
+
+*/
+
+@import "alto/alto.css";
+
+:root {
+
+    --alto-accent-color: #487dac;
+    --alto-main-color: #e8f4ff;
+
+    /* 
+     * 参考颜色 / Reference color
+    
+    --alto-accent-color 强调色
+    --alto-main-color 侧边栏颜色
+    
+    你可以根据第三方主题和你的喜好来决定颜色，这里也给出参考颜色。
+    You can choose the color based on the third-party theme and your preference. Here are some reference colors.
+    
+     * Blue 蓝
+    --alto-accent-color: #487dac;
+    --alto-main-color: #e8f4ff;
+    
+     * Pink 粉
+    --alto-accent-color: #d49fc3;
+    --alto-main-color: #ffe7f0;
+    
+     * Green 绿
+    --alto-accent-color: #077123;
+    --alto-main-color: #f1f6f3;
+
+     * Orange 橙
+    --alto-accent-color: #d6b646;
+    --alto-main-color: #fcf8e7;
+
+    更多颜色正在寻找... More colors are being sought...
+    
+    */
+
+    --alto-content-color: #fff;
+    --alto-text-color: #40464f;
+
+    /* 
+    
+    --alto-content-color 书写区域背景色
+    --alto-text-color 文字颜色
+
+    不建议修改这两个颜色
+    Do not suggest to modify these two colors
+
+    */
+
+}
+
+/*
+
+关于 Alto 主题的详细配置，可在 alto/alto.css 中查看
+For detailed configuration of the Alto theme, please refer to alto/alto.css
+
+*/
