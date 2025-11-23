@@ -134,11 +134,8 @@
     position: absolute;
     top: 100%;
     right: -40px;
-    /* 与下拉的 right 对齐 */
     width: 200px;
-    /* 覆盖下拉宽度 */
     height: 40px;
-    /* 覆盖间隙高度 */
 }
 
 .language-toggle-list {
@@ -216,21 +213,32 @@
 }
 
 .login-card .QR-code img {
-    height: 50px;
-    width: 50px;
-    margin-top: 5px;
+    height: 42px;
+    width: 42x;
+}
+
+.login-card .QR-code {
+    position: absolute;
+    top: -25px;
+    right: -25px;
 }
 
 .login-card .QR-code-wrapper {
     position: absolute;
     top: 0px;
     right: 0px;
-    width: 64px;
-    height: 64px;
-    background-color: #ffbe99;
-    display: flex;
-    align-items: center;
+    width: 0px;
+    height: 0px;
     justify-content: center;
+    border-right: 32px solid #ffbe99;
+    border-top: 32px solid #ffbe99;
+    border-bottom: 32px solid transparent;
+    border-left: 32px solid transparent;
+}
+
+.login-card .QR-code-wrapper:hover {
+    border-right: 32px solid #FF5C00;
+    border-top: 32px solid #FF5C00;
 }
 
 .tabs {
@@ -265,10 +273,20 @@
 
 .login-form .account label {
     position: absolute;
-    top: 15px;
+    top: 20px;
     left: 20px;
     font-size: 17px;
     color: #959595;
+    transition: all 0.3s;
+    pointer-events: none;
+}
+
+.login-form .account input:focus+label,
+.login-form .account input:not(:placeholder-shown)+label {
+    top: 5px;
+    font-size: 12px;
+    color: #ff5c00;
+    /* Or keep original color if preferred, usually active color is better */
 }
 
 .login-form .account input {
@@ -293,10 +311,19 @@
 
 .login-form .password label {
     position: absolute;
-    top: 15px;
+    top: 20px;
     left: 20px;
     font-size: 17px;
     color: #959595;
+    transition: all 0.3s;
+    pointer-events: none;
+}
+
+.login-form .password input:focus+label,
+.login-form .password input:not(:placeholder-shown)+label {
+    top: 5px;
+    font-size: 12px;
+    color: #ff5c00;
 }
 
 .login-form .password input {
