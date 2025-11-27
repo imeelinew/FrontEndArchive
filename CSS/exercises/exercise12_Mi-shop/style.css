@@ -1,0 +1,198 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 5075363 */
+  src: url('//at.alicdn.com/t/c/font_5075363_u2224inbpbq.woff2?t=1764222281979') format('woff2'),
+       url('//at.alicdn.com/t/c/font_5075363_u2224inbpbq.woff?t=1764222281979') format('woff'),
+       url('//at.alicdn.com/t/c/font_5075363_u2224inbpbq.ttf?t=1764222281979') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-fangdajing:before {
+  content: "\e610";
+}
+
+.icon-gouwuchekong:before {
+  content: "\e600";
+}
+
+/* top bar start */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+.top-bar {
+    background-color: #333333;
+    height: 40px;
+    font-size: 12px;
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    align-items: center;
+}
+.top-bar-container {
+    width: 1226px;
+    height: 40px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+.top-bar-left {
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+.top-bar-left ul {
+    position: relative;
+}
+.download-app:hover + .download-app-toggle{
+    opacity: 1;
+}
+
+.download-app-toggle {
+    width: 124px;
+    height: 148px;
+    background-color: white;
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.2);
+    position: absolute;
+    left: 590px;
+    top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity .2s ease;
+}
+.download-app-toggle::before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: -17px;
+    left: 53px;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid white;
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.2);
+}
+.download-app-toggle img {
+    height: 90px;
+    width: 90px;
+}
+.top-bar-right {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    display: flex;
+    margin-left: auto;
+}
+.top-bar-right .shopping-cart {
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    background-color: #424242;
+}
+.top-bar-right ul {
+    margin-right: 20px;
+}
+
+.top-bar a {
+    color: rgb(176, 176, 176);
+}
+.top-bar a:hover{
+    color: white;
+}
+.top-bar ul{
+    display: flex;
+    gap: 7px;
+}
+
+.top-bar .separator {
+    color: #666666;
+    opacity: 0.3;
+}
+/* top bar end */
+
+/* nav bar start */
+.site-nav {
+    height: 100px;
+}
+.site-nav a {
+    color: rgb(51, 51, 51);
+    transition: 0.3s;
+}
+.site-nav a:hover{
+    color: rgb(255, 103, 0);
+}
+.nav-container {
+    width: 1226px;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+}
+.nav-container .nav-list ul {
+    display: flex;
+    margin-left: 200px;
+    gap: 18px;
+}
+.mi-logo img{
+    height: 56px;
+    width: 56px;   
+}
+.nav-search {
+    width: 293px;
+    height: 48px;
+    border: 1px solid rgb(224, 224, 224);
+    margin-left: 90px;
+    display: flex;
+}
+.nav-search .search-input {
+    width: 243px;
+    height: 48px;
+    padding: 0px 10px;
+}
+.nav-search:hover{
+    border-color: black;
+    transition: 0.3s;
+}
+.nav-search:hover  .search-icon{
+    border-color: rgba(0, 0, 0, 0.312);
+    transition: 0.3s;
+}
+.nav-search [type="text"]{
+    border: none;
+    height: 46px;
+    width: 223px;
+}
+.nav-search [type="text"]:focus{
+    outline: none;
+}
+.nav-search .search-icon{
+    width: 50px;
+    height: 46.5px;
+    border: 1px solid rgb(224, 224, 224);
+    text-align: center;
+    line-height: 48px;
+}
+.nav-search .search-icon:hover{
+    background-color: rgb(255, 103, 0);
+    transition: 0.3s;
+}
+.nav-search .search-icon:hover  .icon-fangdajing{
+    color: white !important; 
+    line-height: 46.5px;
+}
+/* nav bar end */
