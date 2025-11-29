@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 5075363 */
-  src: url('//at.alicdn.com/t/c/font_5075363_u2224inbpbq.woff2?t=1764222281979') format('woff2'),
-       url('//at.alicdn.com/t/c/font_5075363_u2224inbpbq.woff?t=1764222281979') format('woff'),
-       url('//at.alicdn.com/t/c/font_5075363_u2224inbpbq.ttf?t=1764222281979') format('truetype');
+  src: url('//at.alicdn.com/t/c/font_5075363_8khy5dce4es.woff2?t=1764384180212') format('woff2'),
+       url('//at.alicdn.com/t/c/font_5075363_8khy5dce4es.woff?t=1764384180212') format('woff'),
+       url('//at.alicdn.com/t/c/font_5075363_8khy5dce4es.ttf?t=1764384180212') format('truetype');
 }
 
 .iconfont {
@@ -13,6 +13,30 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-F:before {
+  content: "\e601";
+}
+
+.icon-shizhong:before {
+  content: "\e74f";
+}
+
+.icon-simqia:before {
+  content: "\e728";
+}
+
+.icon-huafeichongzhi:before {
+  content: "\e62b";
+}
+
+.icon-qiye:before {
+  content: "\e646";
+}
+
+.icon-yijiuhuanxin:before {
+  content: "\e60f";
+}
+
 .icon-fangdajing:before {
   content: "\e610";
 }
@@ -20,6 +44,7 @@
 .icon-gouwuchekong:before {
   content: "\e600";
 }
+
 
 /* top bar start */
 * {
@@ -29,7 +54,6 @@
     list-style: none;
     text-decoration: none;
 }
-
 .top-bar {
     background-color: #333333;
     height: 40px;
@@ -72,6 +96,7 @@
     justify-content: center;
     opacity: 0;
     transition: opacity .2s ease;
+    z-index: 10;
 }
 .download-app-toggle::before {
     content: "";
@@ -196,3 +221,111 @@
     line-height: 46.5px;
 }
 /* nav bar end */
+/* main section start */
+.category-sidebar {
+    padding: 20px 0px;
+}
+.category-sidebar li{
+    width: 234px;
+    height: 42px;
+    padding-left: 30px;
+    font-size: 14px;
+    line-height: 42px;
+    position: relative;
+}
+.category-sidebar li::after{
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    position: absolute;
+    right: 30px;
+    top: 15px;
+    rotate: calc(135deg);
+}
+.category-sidebar li:hover{
+    background-color: #ff6700;
+    cursor: pointer;
+}
+.category-sidebar a {
+    color: white;
+}
+.main-container {
+    width: 1226px;
+    height: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.category-sidebar {
+    width: 234px;
+    height: 460px;
+    background-color: #9e9c9c;
+}
+.hero-slide {
+    width: 992px;
+    height: 460px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.1);
+}
+.hero-slide img {
+    height: 460px;
+    object-fit: cover;
+    position: absolute;
+    left: -220px;
+}
+.service-shortcuts {
+    width: 234px;
+    height: 170px;
+    background-color: #5f5750;
+    position: absolute;
+    top: 475px;
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.1);
+}
+.service-shortcuts a{
+    color: white;
+}
+.service-shortcuts ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.service-shortcuts li {
+    flex: 0 0 33.333%;
+    text-align: center;
+    font-size: 12px;
+    padding: 20px 0;
+}
+.service-shortcuts i {
+    font-size: 25px;
+}
+.service-shortcuts a{
+    color: rgba(255, 255, 255, 0.7);
+}
+.service-shortcuts a:hover{
+    color: white;
+    transition: 0.3s;
+}
+.banner-container {
+    width: 982px;
+    height: 170px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 475px;
+    left: 244px;
+}
+.banner-container img {
+    width: 316px;
+    height: 170px;
+}
+.banner-container img:hover{
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+/* main section end */
