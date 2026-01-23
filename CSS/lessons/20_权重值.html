@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box2 {
+            color: red;
+        }
+        /* 不允许跨等级对比 比如11个类选择器也不大于一个id选择器  */
+        .box1 .box2{
+            color: blue;
+        }
+        /* 权重值可以累加 */
+        /* 10 + 10 = 20 */
+        
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2">hello,world</div>
+    </div>
+</body>
+</html>

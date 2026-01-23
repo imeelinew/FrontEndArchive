@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 600px;
+            height: 600px;
+            background: lightblue;
+        }
+        .box2{
+            width: 400px;
+            height: 400px;
+            background: tomato;
+        }
+        .box3{
+            width: 200px;
+            height: 200px;
+            background: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2">
+            <div class="box3"></div>
+        </div>
+    </div>
+    <script>
+        var oBox1 = document.getElementsByClassName("box1")[0];
+        var oBox2 = document.getElementsByClassName("box2")[0];
+        var oBox3 = document.getElementsByClassName("box3")[0];
+
+        // 事件冒泡 如果多层级元素同时绑定事件,那么最内层触发事件,会依次向外层触发事件
+        oBox1.onclick = function(){
+            console.log("box1");
+        }
+        oBox2.onclick = function(){
+            console.log("box2");
+        }
+        oBox3.onclick = function(){
+            console.log("box3");
+        }
+
+        //事件捕获 如果多层级元素同时绑定事件,那么最外层触发事件,会依次向内层触发事件
+        //addEventListener的第三个值是布尔值,如果为true,代表开启了事件捕获模式,反之为事件冒泡模式
+        oBox1.addEventListener("click",function(){
+            console.log("box1");
+        },true)
+        oBox2.addEventListener("click",function(){
+            console.log("box2");
+        },true)
+        oBox3.addEventListener("click",function(){
+            console.log("box3");
+        },true)
+        //如果同时触发捕获和冒泡,会先处理捕获,再处理冒泡
+    </script>
+</body>
+</html>

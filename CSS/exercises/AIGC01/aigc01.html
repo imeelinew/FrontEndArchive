@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Field Notes Blog | Rain, Ink, and City Walks</title>
+    <style>
+        :root {
+            --bg: #f4efe9;
+            --ink: #1c1b1a;
+            --muted: #6e665e;
+            --accent: #c75c36;
+            --accent-2: #325b8f;
+            --paper: #fffaf5;
+            --shadow: rgba(25, 20, 16, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Playfair Display", "Source Serif 4", "Georgia", serif;
+            color: var(--ink);
+            background:
+                radial-gradient(circle at 10% 10%, #fbe6d6 0%, transparent 40%),
+                radial-gradient(circle at 90% 20%, #d7e3f4 0%, transparent 45%),
+                linear-gradient(180deg, #f7f2ec 0%, #efe7dd 100%);
+            min-height: 100vh;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 32px 20px 80px;
+        }
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0 20px;
+            border-bottom: 1px solid rgba(28, 27, 26, 0.1);
+        }
+
+        .logo {
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 18px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 18px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav a {
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav a:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        .hero {
+            margin: 28px 0 36px;
+            padding: 32px;
+            background: var(--paper);
+            border-radius: 18px;
+            box-shadow: 0 16px 40px var(--shadow);
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            right: -40px;
+            top: -40px;
+            width: 200px;
+            height: 200px;
+            background: conic-gradient(from 120deg, #f6d6c1, #e9c3b1, #d9d7f5);
+            opacity: 0.6;
+            border-radius: 40%;
+            filter: blur(4px);
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            color: var(--muted);
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .hero-meta {
+            margin-top: 18px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 16px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--muted);
+        }
+
+        .hero-card {
+            background: #f1e9e0;
+            border-radius: 16px;
+            padding: 20px;
+            display: grid;
+            gap: 12px;
+        }
+
+        .hero-card h3 {
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-card ul {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+            font-size: 15px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: #f7f0e6;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-2);
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.5fr;
+            gap: 28px;
+        }
+
+        article {
+            background: var(--paper);
+            border-radius: 18px;
+            padding: 32px;
+            box-shadow: 0 20px 40px var(--shadow);
+            display: grid;
+            gap: 28px;
+        }
+
+        .toc {
+            padding: 18px;
+            background: #f2ece6;
+            border-radius: 14px;
+        }
+
+        .toc h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .toc a {
+            display: block;
+            font-size: 14px;
+            color: var(--muted);
+            padding: 6px 0;
+        }
+
+        article h2 {
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        article p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #3a3530;
+        }
+
+        blockquote {
+            border-left: 3px solid var(--accent);
+            padding-left: 16px;
+            font-style: italic;
+            color: #4f4740;
+            background: #fbf5ee;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .photo {
+            height: 220px;
+            border-radius: 16px;
+            background:
+                linear-gradient(120deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2)),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='400'%3E%3Crect width='800' height='400' fill='%23e2d4c4'/%3E%3Cpath d='M0 300 Q200 200 400 260 T800 220 V400 H0 Z' fill='%23c9b9aa'/%3E%3Ccircle cx='620' cy='120' r='60' fill='%23b89b88'/%3E%3C/svg%3E");
+            background-size: cover;
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+        }
+
+        .note-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 14px;
+        }
+
+        .note {
+            background: #f8f2ec;
+            border-radius: 12px;
+            padding: 14px;
+            border: 1px solid rgba(28, 27, 26, 0.08);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .kit-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .kit-table th,
+        .kit-table td {
+            text-align: left;
+            padding: 10px;
+            border-bottom: 1px solid rgba(28, 27, 26, 0.08);
+        }
+
+        .kit-table th {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        pre {
+            background: #1f1c1a;
+            color: #f7f2ec;
+            padding: 16px;
+            border-radius: 12px;
+            overflow-x: auto;
+            font-size: 13px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            padding: 6px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(28, 27, 26, 0.15);
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        aside {
+            display: grid;
+            gap: 18px;
+        }
+
+        .side-card {
+            background: var(--paper);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 16px 32px var(--shadow);
+            display: grid;
+            gap: 12px;
+        }
+
+        .side-card h3 {
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .side-card p,
+        .side-card li {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--muted);
+        }
+
+        .side-card ul {
+            list-style: none;
+            display: grid;
+            gap: 8px;
+        }
+
+        .newsletter {
+            display: grid;
+            gap: 10px;
+        }
+
+        input[type="email"] {
+            padding: 10px 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(28, 27, 26, 0.2);
+            font-size: 14px;
+        }
+
+        button {
+            padding: 10px 12px;
+            border-radius: 10px;
+            border: none;
+            background: var(--accent);
+            color: white;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .related {
+            display: grid;
+            gap: 16px;
+        }
+
+        .related-card {
+            border-radius: 14px;
+            padding: 14px;
+            background: #f8f2ec;
+            display: grid;
+            gap: 6px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(12px);
+            animation: fadeUp 0.9s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header class="topbar reveal">
+            <div class="logo">Field Notes</div>
+            <nav class="nav">
+                <a href="#">Stories</a>
+                <a href="#">Studio</a>
+                <a href="#">Travel</a>
+                <a href="#">Journal</a>
+            </nav>
+        </header>
+
+        <section class="hero reveal delay-1">
+            <div>
+                <span class="badge">New Essay</span>
+                <h1>Rain, Ink, and a Long Walk Through the Old Market</h1>
+                <p>
+                    I carried a small notebook, a map scribbled with coffee stains, and a quiet plan:
+                    walk until the city stops naming itself. By noon the rain finally arrived, and the
+                    alleys began to smell like copper, sweet bread, and wet paper.
+                </p>
+                <div class="hero-meta">
+                    <span>Published Oct 12</span>
+                    <span>10 min read</span>
+                    <span>By Lin Zhou</span>
+                </div>
+            </div>
+            <div class="hero-card">
+                <h3>Reading List</h3>
+                <ul>
+                    <li>Sketching the storm line before it hit the roofs</li>
+                    <li>Collecting three conversations about bread</li>
+                    <li>How to slow down without stopping</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="main-grid">
+            <article class="reveal delay-2">
+                <div class="toc">
+                    <h4>On this page</h4>
+                    <a href="#section-1">The walk begins</a>
+                    <a href="#section-2">Notes from the market</a>
+                    <a href="#section-3">Sketches and recipes</a>
+                    <a href="#section-4">Tools I carried</a>
+                </div>
+
+                <section id="section-1">
+                    <h2>The walk begins before the rain</h2>
+                    <p>
+                        I left early because the city reads differently before the buses wake up. The sidewalks
+                        belonged to bakers, to cleaners, and to the early birds who treat the river like a ritual.
+                        The plan was simple: follow the smell of bread, turn where the sounds are softer, and let
+                        the map be more suggestion than instruction.
+                    </p>
+                    <p>
+                        A good walk should change your pace at least three times. It should invite detours. It should
+                        offer a bench that is too sunlit, and a storefront that feels like a small theatre. The old
+                        market delivers all of that, especially on a day when the sky does not quite decide what to do.
+                    </p>
+                </section>
+
+                <section>
+                    <div class="photo"></div>
+                </section>
+
+                <section id="section-2">
+                    <h2>Notes from the market</h2>
+                    <p>
+                        The stall owners are historians without the title. One woman pointed to the tiled roof
+                        and told me which year the fire took it and which year her father rebuilt it. Another
+                        vendor lined up jars of spice like a color study: paprika, sumac, dried citrus, and a
+                        deep green powder that smelled like a garden after watering.
+                    </p>
+                    <blockquote>
+                        "The best shops are the ones that let you borrow their stories. You bring them back
+                        a little altered, but still warm."
+                    </blockquote>
+                    <p>
+                        I wrote down small data points: the width of the alley at its narrowest point, the price
+                        of plum bread, the shape of a door handle carved to look like a wave. These notes are less
+                        about accuracy and more about capturing the weather inside a place.
+                    </p>
+                    <div class="note-grid">
+                        <div class="note">
+                            Morning light turns the cobblestones silver. The shop with blue shutters is the
+                            quietest corner, perfect for a pause.
+                        </div>
+                        <div class="note">
+                            The spice vendor lets you taste before you buy. I tried dried orange peel and made
+                            a mental note for winter tea.
+                        </div>
+                        <div class="note">
+                            The second floor of the tea house is never empty. Its railing creaks in a way that
+                            sounds like pages turning.
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-3">
+                    <h2>Sketches and recipes</h2>
+                    <p>
+                        I keep quick sketches in the back of the notebook. They are not accurate, but they are honest
+                        about the feeling of the scene. For today, the drawing was a series of umbrellas overlapping
+                        above the fruit stalls, with a soft triangle of light cutting down the center aisle.
+                    </p>
+                    <p>
+                        The baker shared a recipe for a rain-day syrup. It is simple, but the trick is to wait for the
+                        citrus peel to soften instead of forcing the boil. Below is the condensed version, written in
+                        the way I write all recipes when I know I will not be in a hurry.
+                    </p>
+                    <pre><code>Warm a small pot.
+Add 2 cups water, 1 cup sugar.
+Drop in orange peel and a slice of ginger.
+Simmer until the peel turns translucent.
+Cool, bottle, and keep for late afternoons.</code></pre>
+                    <p>
+                        If you make it, pair it with strong black tea and a window that stays fogged for at least
+                        ten minutes. The city outside will look like it has been drawn in charcoal.
+                    </p>
+                </section>
+
+                <section id="section-4">
+                    <h2>Tools I carried</h2>
+                    <p>
+                        My kit stays minimal so I can walk longer. When the weather is uncertain, these are the items
+                        that always end up in the bag. The list is less about gear and more about the rituals attached
+                        to each object.
+                    </p>
+                    <table class="kit-table">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Why it matters</th>
+                                <th>Weight</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Leather notebook</td>
+                                <td>Holds sketches without bleeding through</td>
+                                <td>210 g</td>
+                            </tr>
+                            <tr>
+                                <td>Fountain pen</td>
+                                <td>Ink dries quickly, handles damp air well</td>
+                                <td>24 g</td>
+                            </tr>
+                            <tr>
+                                <td>Compact umbrella</td>
+                                <td>Lets me keep both hands free for notes</td>
+                                <td>320 g</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section>
+                    <h2>Closing thought</h2>
+                    <p>
+                        The walk ended where it started, but the map was different. It had new folds and
+                        a few damp corners. That feels right. Cities are built for return visits, and so
+                        are the stories we write about them.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">City Walks</span>
+                        <span class="tag">Food Notes</span>
+                        <span class="tag">Travel Writing</span>
+                        <span class="tag">Field Sketches</span>
+                    </div>
+                </section>
+            </article>
+
+            <aside class="reveal delay-3">
+                <div class="side-card">
+                    <h3>About the author</h3>
+                    <p>
+                        Lin writes about slow travel, studio rituals, and the small textures that make a city feel
+                        like a story. She keeps a folder of handwritten maps from places she wants to return to.
+                    </p>
+                </div>
+                <div class="side-card">
+                    <h3>Recent posts</h3>
+                    <ul>
+                        <li>How a late train turned into a coastal lunch</li>
+                        <li>The cafe that still writes receipts by hand</li>
+                        <li>Notes on night markets and soft lantern light</li>
+                        <li>Five pages of a sketchbook from the ferry</li>
+                    </ul>
+                </div>
+                <div class="side-card newsletter">
+                    <h3>Monthly letter</h3>
+                    <p>Quiet essays and city notes, delivered on the first Sunday of the month.</p>
+                    <input type="email" placeholder="Email address">
+                    <button type="button">Subscribe</button>
+                </div>
+                <div class="side-card">
+                    <h3>Related essays</h3>
+                    <div class="related">
+                        <div class="related-card">
+                            <strong>Paper maps and pencil marks</strong>
+                            <span>8 min read</span>
+                        </div>
+                        <div class="related-card">
+                            <strong>The sound of rain on tin roofs</strong>
+                            <span>6 min read</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <footer class="footer reveal delay-4">
+            <p>Field Notes Blog. Crafted in quiet afternoons and rainy mornings.</p>
+        </footer>
+    </div>
+</body>
+</html>

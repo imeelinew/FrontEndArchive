@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        float: left;
+        /* 浮动会导致浮动的元素脱离文档流 */
+        /* 释放掉之前占据的空间 高度塌陷 */
+    }
+
+    .content {
+        width: 800px;
+        margin: 0 auto;
+        border: 3px solid black;
+    }
+    .content::after{
+        content: "";
+        display: block;
+        clear: both;
+
+    }
+    p {
+        clear: both;
+    }
+</style>
+
+<body>
+    <div class="content">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <p>衣帝后预是所贼而郭喜.
+        </p>
+    </div>
+
+</body>
+
+</html>

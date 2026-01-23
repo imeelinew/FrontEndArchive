@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: tomato;
+            position: relative;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* translate是位移,是transform里面的属性,后面的两个值分别代表横向和纵向 */
+            /* 第一个是横向位移,第二个是纵向位移 */
+            transform: translate(-50%, -50%);
+
+            /* 同一个选择器不允许出现两个相同的属性 */
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

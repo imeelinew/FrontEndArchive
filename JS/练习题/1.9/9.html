@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var luckyNum = 8;
+        var num1;
+        var num2;
+        var num3;
+        var count = 0;
+
+        function numMachine() {
+
+            for (i = 1; i <= 10000; i++) {
+                num1 = Math.floor(Math.random() * 9) + 1;
+                num2 = Math.floor(Math.random() * 9) + 1;
+                num3 = Math.floor(Math.random() * 9) + 1;
+
+                if(num1 == luckyNum || num2 == luckyNum || num3 == luckyNum){
+                    count++;
+                }
+            }
+
+        }
+        numMachine();
+
+        document.write(count + "<br>");
+
+        ratio = count / 10000;
+        document.write("ratio = " + ratio + "%" + "<br>");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 300px;
+            height: 50px;
+            background: gray;
+            display: flex;
+        }
+
+        .item {
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .item:hover {
+            color: white;
+            background: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item first">first</div>
+        <div class="item second">second</div>
+        <div class="item third">third</div>
+    </div>
+
+    <script>
+        var oFirst = document.querySelector(".first");
+        var oSecond = document.querySelector(".second");
+        var oThird = document.querySelector(".third");
+
+        oFirst.onclick = function () {
+            window.location.hash = "first";
+
+        }
+        oSecond.onclick = function () {
+            window.location.hash = "second";
+        }
+        oThird.onclick = function () {
+            window.location.hash = "third";
+        }
+
+        window.onhashchange = function () {
+            var hash = window.location.hash;
+            console.log(hash);
+        }
+    </script>
+</body>
+
+</html>

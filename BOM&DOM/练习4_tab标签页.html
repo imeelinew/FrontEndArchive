@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: "iconfont";
+            /* Project id 5075363 */
+            src: url('//at.alicdn.com/t/c/font_5075363_78q159zvkki.woff2?t=1768456991312') format('woff2'),
+                url('//at.alicdn.com/t/c/font_5075363_78q159zvkki.woff?t=1768456991312') format('woff'),
+                url('//at.alicdn.com/t/c/font_5075363_78q159zvkki.ttf?t=1768456991312') format('truetype');
+        }
+
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .icon-erjiyemianjiantou01:before {
+            content: "\e616";
+        }
+
+        .icon-xiazai1:before {
+            content: "\e602";
+        }
+
+        .icon-banshou:before {
+            content: "\e659";
+        }
+
+        .icon-headset:before {
+            content: "\e605";
+        }
+
+        .icon-renwu-ren:before {
+            content: "\e749";
+        }
+
+        .icon-shouji:before {
+            content: "\eac3";
+        }
+
+        .icon-F:before {
+            content: "\e601";
+        }
+
+        .icon-shizhong:before {
+            content: "\e74f";
+        }
+
+        .icon-simqia:before {
+            content: "\e728";
+        }
+
+        .icon-huafeichongzhi:before {
+            content: "\e62b";
+        }
+
+        .icon-qiye:before {
+            content: "\e646";
+        }
+
+        .icon-yijiuhuanxin:before {
+            content: "\e60f";
+        }
+
+        .icon-fangdajing:before {
+            content: "\e610";
+        }
+
+        .icon-gouwuchekong:before {
+            content: "\e600";
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 1226px;
+            height: 460px;
+            margin: 0 auto;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-top: -230px;
+            margin-left: -613px;
+        }
+
+        .container .swiper img {
+            width: 1226px;
+            height: 460px;
+        }
+
+        .swiper-btns {
+            width: 170px;
+            height: 21px;
+            position: absolute;
+            /* background-color: white; */
+            left: 100%;
+            margin-left: -170px;
+            top: 90%;
+
+        }
+
+        .swiper-btns .swiper-btn {
+            width: 12px;
+            height: 12px;
+            background-color: #544d46;
+            border-radius: 50%;
+            float: left;
+            margin-top: 5px;
+            margin-left: 10px;
+            position: relative;
+        }
+
+        .swiper-btns .swiper-btn:hover {
+            background-color: #939393;
+            cursor: pointer;
+        }
+
+        .swiper-btns .swiper-btn:hover::before {
+            background-color: #e0e0e0;
+        }
+
+        .swiper-btns .active {
+            background-color: #939393;
+        }
+
+        .swiper-btns .swiper-btn.active::before {
+            background-color: #e0e0e0;
+        }
+
+        .swiper-btns .swiper-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -3px;
+            margin-left: -3px;
+            border-radius: 50%;
+            width: 6px;
+            height: 6px;
+            background-color: #262626;
+
+        }
+
+        .category-list {
+            width: 234px;
+            height: 460px;
+            background: rgba(124, 124, 124, 0.5);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-top: -230px;
+            margin-left: -613px;
+            padding: 20px 0px 0px;
+        }
+
+        .category-list li {
+            height: 42px;
+            color: white;
+            font-size: 14px;
+            line-height: 42px;
+            cursor: pointer;
+            padding-left: 20px;
+        }
+
+        .category-list li i {
+            float: right;
+            padding-right: 20px;
+        }
+
+        .category-list li:hover {
+            background-color: #ff6700;
+        }
+
+        .swiper .arrow-btn {
+            width: 1226px;
+            height: 69px;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            margin-top: -34px;
+        }
+
+        .swiper .arrow-btn img {
+            width: 41px;
+            height: 69px;
+        }
+
+        .arrow-btn-left {
+            float: left;
+            margin-left: 234px;
+            background-image: url(./img/slider-icon.png);
+            background-position: -84px 0;
+        }
+
+        .arrow-btn-left:hover {
+            background-position: 0 0;
+            cursor: pointer;
+        }
+
+        .arrow-btn-right {
+            float: right;
+            background-image: url(./img/slider-icon.png);
+            background-position: -125px 0;
+            cursor: pointer;
+        }
+
+        .arrow-btn-right:hover {
+            background-position: -42px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="category-list">
+            <ul>
+                <li>小米手机
+                    <i class="iconfont icon-erjiyemianjiantou01"></i>
+                </li>
+                <li>小米电视
+                    <i class="iconfont icon-erjiyemianjiantou01"></i>
+                </li>
+                <li>小米笔记本
+                    <i class="iconfont icon-erjiyemianjiantou01"></i>
+                </li>
+                <li>小米家电
+                    <i class="iconfont icon-erjiyemianjiantou01"></i>
+                </li>
+                <li>小米有品
+                    <i class="iconfont icon-erjiyemianjiantou01"></i>
+                </li>
+                <li>小米路由器
+                    <i class="iconfont icon-erjiyemianjiantou01"></i>
+                </li>
+                <li>小米智能
+                    <i class="iconfont icon-erjiyemianjiantou01"></i>
+                </li>
+                <li>小米穿戴
+                    <i class="iconfont icon-erjiyemianjiantou01"></i>
+                </li>
+                <li>小米生活
+                    <i class="iconfont icon-erjiyemianjiantou01"></i>
+                </li>
+                <li>小米金融
+                    <i class="iconfont icon-erjiyemianjiantou01"></i>
+                </li>
+            </ul>
+        </div>
+        <div class="swiper">
+            <ul>
+                <li>
+                    <img class="swiper-img" src="./img/1.jpg" alt="">
+                </li>
+            </ul>
+            <div class="arrow-btn">
+                <img class="arrow-btn-left" alt="">
+                <img class="arrow-btn-right" alt="">
+            </div>
+        </div>
+        <div class="swiper-btns">
+            <ul>
+                <li class="swiper-btn active"></li>
+                <li class="swiper-btn"></li>
+                <li class="swiper-btn"></li>
+                <li class="swiper-btn"></li>
+                <li class="swiper-btn"></li>
+                <li class="swiper-btn"></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var aSwiperBtn = document.getElementsByClassName('swiper-btn');
+        var oSwiperImg = document.getElementsByClassName('swiper-img')[0];
+        var currentIndex = 1;
+        var oContainer = document.getElementsByClassName('container')[0];
+
+        // 鼠标移入暂停
+        oContainer.onmouseover = function () {
+            console.log("滑动暂停");
+            clearInterval(intervalId);
+        }
+
+        // 鼠标移出恢复
+        oContainer.onmouseout = function () {
+            console.log("滑动恢复");
+            startAutoPlay();
+        }
+        function autoPlay() {
+            //默认情况下自动轮播
+            //先加1,再检测边界,最后再修改图片src
+            currentIndex++;
+            if (currentIndex > 6) {
+                currentIndex = 1;
+            }
+            oSwiperImg.src = "./img/" + currentIndex + ".jpg";
+            //底部按钮样式自动随着图片轮播
+            for (var i = 0; i < aSwiperBtn.length; i++) {
+                aSwiperBtn[i].classList.remove("active");
+            }
+            aSwiperBtn[currentIndex - 1].classList.add("active");
+        }
+
+        function startAutoPlay() {
+            intervalId = setInterval(autoPlay, 2000);
+        }
+        startAutoPlay();
+
+        // 按钮hover改图片
+        for (i = 0; i < aSwiperBtn.length; i++) {
+            aSwiperBtn[i].index = i + 1;
+            aSwiperBtn[i].onclick = function () {
+
+                oSwiperImg.src = "./img/" + this.index + ".jpg";
+                clearInterval(intervalId);
+            }
+        }
+        var oArrowBtnLeft = document.getElementsByClassName('arrow-btn-left')[0];
+        var oArrowBtnRight = document.getElementsByClassName('arrow-btn-right')[0];
+
+        oArrowBtnLeft.onclick = function () {
+            currentIndex--;
+            if (currentIndex < 1) {
+                currentIndex = 6;
+            }
+            oSwiperImg.src = "./img/" + currentIndex + ".jpg";
+            for (var i = 0; i < aSwiperBtn.length; i++) {
+
+                aSwiperBtn[i].classList.remove("active");
+            }
+            aSwiperBtn[currentIndex - 1].classList.add("active");
+        }
+        oArrowBtnRight.onclick = function () {
+            currentIndex++;
+            for (var i = 0; i < aSwiperBtn.length; i++) {
+
+                aSwiperBtn[i].classList.remove("active");
+            }
+            if (currentIndex > 6) {
+                currentIndex = 1;
+            }
+            oSwiperImg.src = "./img/" + currentIndex + ".jpg";
+
+            aSwiperBtn[currentIndex - 1].classList.add("active");
+        }
+    </script>
+</body>
+
+</html>

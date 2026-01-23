@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+            var oBox = document.getElementsByClassName("box");
+            console.log(oBox[0]);
+            // 通过on绑定事件,on + 事件名称 = 事件处理函数
+            // click 点击事件 当用户点击某一个元素
+            // on只能绑定一个事件,如果绑定多个,后面的会覆盖前面的
+            oBox[0].onclick = function(){
+                console.log("点击了");
+            }
+            // oBox.onclick = null; // 取消绑定事件
+            // oBox[0].onclick = function(){
+            //     console.log("又点击了");
+            // }
+
+
+            // //通过addEventListener绑定事件
+            // oBox[0].addEventListener("click",function(){
+            //     console.log("点击了");
+            // })
+            // //addEventListener可以绑定多个事件
+            // oBox[0].addEventListener("click",function(){
+            //     console.log("又点击了");
+            // })
+    </script>
+</body>
+</html>

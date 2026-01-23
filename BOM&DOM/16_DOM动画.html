@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        var oBox = document.getElementsByClassName("box")[0];
+
+        oBox.onmouseover = function () {
+            // oBox.style.width =  "400px"
+            // oBox.style.height = "400px" 
+            // var width = 200;
+            // setInterval(function(){
+            //     width += 10;
+            //     oBox.style.width = width + "px";
+            // },16);
+
+            //获取当前元素的宽度 offsetWidth 包括border padding
+            //获取当前元素的高度 offsetHeight 包括border padding
+            var width = oBox.offsetWidth;
+            setInterval(function(){
+                width += 10;
+                oBox.style.width = width + "px";
+            },16);
+        }
+    </script>
+</body>
+</html>

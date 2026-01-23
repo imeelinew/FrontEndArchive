@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 对象中也是存储多个值
+        // 内容的形式是键值对
+        var person = {
+            name: "张三",
+            age: 20,
+            gender: "男",
+        }
+        
+        var goods = {
+            img: "1.jpg",
+            name: "商品1",
+            price: 100,
+            color: "red",
+            size: "M",  
+        }
+
+        // 对象中可以存放任何的类型
+        var obj = {
+            num: 123,
+            str: "abc",
+            bool: true,
+            obj: {a: 1, b: 2},
+            arr: [1, 2, 3],
+            func: function() {
+                console.log("hello");
+            }
+        }
+
+        // 在对象中调用属性或方法，需要使用点号
+        console.log(person.name);
+        console.log(goods.price);
+
+        //修改对象属性
+        person.name = "李四";
+        //删除对象属性
+        delete person.age;
+        //添加对象属性
+        person.school = "xxx学校";   
+        console.log(person);   
+    </script>
+</body>
+</html>

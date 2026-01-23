@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://www.baidu.com">百度</a>
+    <script>
+        var a = document.getElementsByTagName("a")[0];
+        // a.onclick = function(){
+        //     console.log("点击了");
+        //     // 在事件处理函数中如果使用return表示阻止默认行为（比如阻止链接跳转）
+        //     return false;
+        // }
+
+        a.onclick = function(e){
+            console.log(e);
+            // return false;
+            // 任何事件处理函数中都有一个event对象，称为事件对象
+            // 事件对象中有很多自带的属性和方法
+            event.preventDefault();
+            console.log(event.clientX, event.clientY);
+
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons", "PingFang SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    *::before {
+        box-sizing: border-box;
+    }
+
+    *::after {
+        box-sizing: border-box;
+    }
+
+    .container {
+        width: 800px;
+        height: auto;
+        margin: 0 auto;
+        background-color: lightgrey;
+        border-radius: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 20px auto;
+    }
+
+    .profile-card {
+        border: 2px solid transparent;
+
+    }
+
+    .profile-pic {
+        width: 200px;
+        float: left;
+        margin: 20px;
+        border-radius: 20px;
+
+    }
+
+    .profile-desc {
+        padding: 20px;
+        line-height: 1.7em;
+    }
+
+    .container::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .card-desc-container {
+        width: 800px;
+        margin: 20px auto;
+    }
+
+    .profile-desc-footer {
+        font-size: 14px;
+        color: gray;
+    }
+
+    .other-info-container {
+        width: 800px;
+        margin: 20px auto;
+    }
+
+    .navbar-selection {
+        display: inline-block;
+        /* margin: 0 40px; */
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+        background-color: rgb(64, 178, 217);
+        border-radius: 5px;
+        margin: 10px 10px;
+        text-decoration: none;
+        color: black;
+    }
+
+    li {
+        display: inline-block;
+    }
+
+    a:hover {
+        background-color: rgb(14, 135, 175);
+        color: white;
+    }
+
+    .site-nav-bar {
+        text-align: center;
+        background: lightblue;
+    }
+
+    input {
+        display: inline-block;
+    }
+    [type="text"] {
+        background-color: lightblue;
+        border: 1px solid black;
+        border-radius: 5px;
+        height: 30px;
+    }
+
+</style>
+
+<body>
+    <header class="site-header">
+        <h1>个人博客页面</h1>
+    </header>
+    <nav class="site-nav-bar">
+        <ul>
+            <li><a class="navbar-selection" href="">主页</a></li>
+            <li><a class="navbar-selection" href="">搜索</a></li>
+            <li><a class="navbar-selection" href="">查询</a></li>
+            <li><a class="navbar-selection" href="https://github.com/imeelinew?tab=repositories">Github首页</a></li>
+            <li><a class="navbar-search" href=""><input type="text" placeholder="Input"></a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="card-desc-container"
+            <h3>我的名片</h3>
+        </div>
+        <div class="container">
+            <div class="profile-card">
+                <img class="profile-pic" src="../../assets/profilepic.jpg" alt="">
+                <div class="profile-desc">
+                    <p>博客是一种在线日记型式的个人网站，借由张帖子章、图片或影片来记录生活、抒发情感或分享信息。博客上的文章通常根据张贴时间，以倒序方式由新到旧排列。
+                        许多博客作者专注评论特定的课题或新闻，其他则作为个人日记。一个典型的博客结合了文字、图像、其他博客或网站的超链接、及其它与主题相关的媒体。</p><br>
+                    <p class="profile-desc-footer">烦起越，诗郭解孔一上衣，衣若知位服
+                </div>
+
+            </div>
+        </div>
+        <div class="other-info-container">
+            <h3>其他信息</h3>
+        </div>
+        <div class="other-info-card">
+
+        </div>
+    </main>
+    <footer class="site-footer"></footer>
+</body>
+
+</html>

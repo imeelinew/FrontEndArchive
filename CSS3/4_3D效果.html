@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            /* 观察者距离 */
+            perspective: 1000px;
+            /* 观察者位置 后边可以写两个值 一个横向 一个纵向 */
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 2px dashed black;
+            margin: 100px auto;
+            position: relative;
+
+        }
+
+        .box3 {
+            width: 200px;
+            height: 200px;
+            border: 2px dashed black;
+            margin: 100px auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-style: preserve-3d;
+            transform: rotateY(45deg);
+        }
+
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box3">
+            <div class="box1"></div>
+            <div class="box2"></div>
+        </div>
+
+    </div>
+</body>
+
+</html>

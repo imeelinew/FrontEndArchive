@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* *{
+        margin: 0;
+    } */
+    .container {
+        border: 2px solid black;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    .container::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .box1 {
+        width: 200px;
+        height: 200px;
+        background-color: rgba(0, 0, 255, 0.789);
+        float: left;
+        margin: 10px;
+        text-align: center;
+        font-size: 100px;
+        line-height: 200px;
+        color: white;
+    }
+
+    .box2 {
+        width: 200px;
+        height: 200px;
+        background-color: rgba(255, 0, 0, 0.672);
+        float: right;
+        margin: 10px;
+        text-align: center;
+        font-size: 100px;
+        line-height: 200px;
+        color: white;
+    }
+    .box3 {
+        width: 200px;
+        height: 200px;
+        text-align: center;
+        font-size: 100px;
+        line-height: 200px;
+        color: white;
+    }
+    #left{
+        background-color: lightgreen;
+        float: left;
+        margin: 10px;
+    }
+    #middle{
+        background-color: orange;
+        margin: 10px auto;
+        /* position: relative; */
+        /* left: calc(50% - 330px); */
+    }
+    #right{
+        background-color: lightgreen;
+        float: right;
+        margin: 10px;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <div class="box1">1</div>
+        <div class="box1">2</div>
+        <div class="box1">3</div>
+    </div>
+
+    <div class="container">
+        <div class="box2">1</div>
+        <div class="box2">2</div>
+        <div class="box2">3</div>
+    </div>
+<!-- 类名可以起好几个，这样可以减少重复代码 -->
+    <div class="container">
+        <div class="box3" id="left">左</div>
+        <div class="box3" id="right">右</div>
+        <div class="box3" id="middle">中</div>
+    </div>
+</body>
+
+</html>

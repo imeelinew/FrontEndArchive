@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header,
+        nav,
+        footer,
+        .main-content,
+        .article {
+            max-width: 980px;
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header {
+            height: 50px;
+            background: lightgray;
+            line-height: 50px;
+            font-size: 20px;
+        }
+
+        nav {
+            height: 50px;
+            background: lightgray;
+            line-height: 50px;
+            font-size: 20px;
+        }
+
+        footer {
+            height: 50px;
+            background: lightgray;
+            line-height: 50px;
+            font-size: 20px;
+        }
+
+        .main-content {
+            width: 100%;
+            height: 50vh;
+            background-position: center;
+        }
+
+        .article {
+            display: flex;
+        }
+
+        .article-left {
+            background: tomato;
+            margin-right: 20px;
+            flex: 2;
+        }
+
+        .article-right {
+            background: lightgreen;
+            flex: 1;
+        }
+
+        @media screen and (min-width: 980px) {
+            .main-content {
+                background-image: url(./img/1.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+
+        @media screen and (max-width: 960px) and (min-width: 480px) {
+            .main-content {
+                background-image: url(./img/2.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .main-content {
+                background-image: url(./img/3.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            .article {
+                flex-direction: column;
+            }
+
+            .article-left {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>页头</header>
+    <nav>导航</nav>
+    <div class="main-content">
+    </div>
+    <section class="article">
+        <div class="article-left">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis non reprehenderit sint ipsum ipsam sequi
+                pariatur, mollitia accusamus eius ipsa. Hic Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis nesciunt totam doloremque ullam porro possimus accusantium ea consequuntur minima, consectetur iure incidunt minus enim, dignissimos magnam unde officiis mollitia eveniet!</p>
+        </div>
+        <div class="article-right">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quo illum accusantium maiores tenetur autem
+                et, nobis saepe ab vel sit eum ad reiciendis blanditiis similique reprehenderit consequuntur doloribus
+                cumque!</p>
+        </div>
+    </section>
+
+    <footer>页脚</footer>
+</body>
+
+</html>

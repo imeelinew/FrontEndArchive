@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            a:"1",
+            b:"2",
+            fun:function(){
+                console.log(obj.a);
+                console.log(this.a);//this表示的是当前的对象,和上面的一行一样
+            }
+        }
+        //或者这么理解:this指向的是调用他的对象
+        obj.fun();
+    </script>
+</body>
+</html>

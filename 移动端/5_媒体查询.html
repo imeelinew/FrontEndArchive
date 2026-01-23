@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 600px;
+            max-width: 1200px;
+            background-color: tomato;
+
+            /* 媒体查询  根据屏幕类型和尺寸来控制样式*/
+        }
+
+        @media screen and (max-width: 1000px) {
+            .box {
+                background-color: blue;
+            }
+
+        }
+
+        @media screen and (max-width: 1200px) {
+            .box {
+                background-color: green;
+            }
+        }
+
+        @media screen and (orientation: landscape)
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

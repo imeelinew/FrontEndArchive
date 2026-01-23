@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .context-menu {
+        border: 2px solid black;
+        width: 250px;
+        height: 400px;
+        background-color: white;
+        position: absolute;
+        opacity: 0;
+    }
+
+    .context-menu-item {
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        border-bottom: 2px solid black;
+    }
+</style>
+
+<body>
+    <div class="context-menu">
+        <div class="context-menu-item">复制</div>
+        <div class="context-menu-item">剪切</div>
+        <div class="context-menu-item">粘贴</div>
+        <div class="context-menu-item">删除</div>
+    </div>
+
+    <script>
+        var oDocument = document.documentElement;
+        var oContextMenu = document.getElementsByClassName("context-menu")[0];
+        var oBody = document.getElementsByTagName("body")[0];
+
+        oDocument.oncontextmenu = function (e) {
+            oContextMenu.style.opacity = "1";
+            oContextMenu.style.left = e.clientX + "px";
+            oContextMenu.style.top = e.clientY + "px";
+            oBody.style.backgroundColor = "black";
+            event.preventDefault();
+        }
+
+        oDocument.onclick = function (e) {
+            oBody.style.backgroundColor = "white";
+            oContextMenu.style.opacity = "0";
+        }
+    </script>
+</body>
+
+</html>

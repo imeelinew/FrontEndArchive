@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            background-color: lightgreen;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            background-color: lightcoral;
+            position: relative;
+            top: 100px;
+            left: 100px;
+        }
+        /* 上面是父元素和子元素的大小都确定的场景 */
+        .box3{
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            background-color: lightblue;
+            position: relative;
+        }
+        .box4{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            background-color: lightcoral;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -100px;
+        }
+        /* 上面是父元素不确定，子元素大小确定的场景 */
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+    <div class="box3">
+        <div class="box4"></div>
+    </div>
+</body>
+</html>

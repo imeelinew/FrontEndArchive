@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    display: inline-block;
+    float: right;
+}
+
+li {
+    display: inline-block;
+    margin: 0 20px;
+    font-size: 12px;
+    font-weight: 900;
+
+}
+
+a {
+    display: inline-block;
+
+}
+
+.navbar-container {
+    margin: 0 auto;
+    width: 1200px;
+    height: 66px;
+    text-align: center;
+    padding: 8px;
+}
+
+.navbar {
+    background-color: lightgray;
+
+}
+
+.navbar-brand {
+    text-decoration: none;
+    color: black;
+    font-weight: 900;
+    font-size: 20px;
+    float: left;
+    line-height: 66px;
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: black;
+    line-height: 66px;
+}
+
+.header-img {
+    width: 100%;
+    /* 头图容器占满 */
+    height: 458px;
+    /* 需要的高度 */
+    overflow: hidden;
+    /* 裁切超出部分 */
+    position: relative;   
+
+}
+/* 压暗遮 */
+.header-img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.35); /* 调整强度 */
+    pointer-events: none;
+  }
+
+.header-img img {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(40%);  
+  
+    object-fit: cover;
+    /* 按容器裁切铺满 */
+    display: block;
+    /* 避免底部空隙 */
+}
+.header-title {
+    position: absolute;
+    inset: 0;                /* top/right/bottom/left 全为 0，占满容器 */
+    display: flex;
+    align-items: center;     /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+    color: #ffffff;
+    font-size: 80px;
+    font-weight: 800;
+    text-align: center;
+    z-index: 1;
+}
+
+.site-header {
+    height: auto;
+}

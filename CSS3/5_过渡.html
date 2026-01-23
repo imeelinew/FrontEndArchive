@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            background: blue;
+            /* transition: all 1s ease-in-out; */
+            /* transition后面有三个值 第一个值表示过渡的属性 第二个值表示过渡的时间 第三个值表示过渡的方式 */
+            /* 也可以展开写 */
+            transition-property: all;
+            transition-duration: 1s;
+            transition-timing-function: ease-in-out;
+        }
+
+        .box:hover {
+            transform: rotate(45deg);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .blue {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            color: white;
+            /* overflow: hidden; */
+            /* overflow hidden 可以解决父元素塌陷，但是自己本身会被隐藏一部分 */
+            display: flex;
+            /* 而flex就完美解决了问题 */
+        }
+
+        .red {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin-top: 100px;
+            /* 蓝色按理应该不动，结果一起向下，这叫BFC，外边距溢出，仅限于垂直方向 margin-top */
+            /* BFC: 块级格式化上下文 */
+            /* BFC 限制内部元素与外部元素接触 内部元素的所有效果也仅限于BFC区域内 */
+        }
+
+
+        .green {
+            background-color: lightgreen;
+            width: 200px;
+            height: 200px;
+            margin-bottom: 20px;
+
+        }
+
+        /* green与purple按理来说上下应该是50px的margin，结果是30px，这是异常布局情况，叫外边距合并 */
+        .purple {
+            margin-top: 30px;
+            background-color: rgb(226, 78, 231);
+            width: 200px;
+            height: 200px;
+            /* overflow: hidden; */
+            /* 这里使用 overflow hidden 无法解决问题， 因为它只能解决父子元素的外边距溢出问题,不能解决相邻兄弟元素的外边距合并问题 */
+            /* 因此解决方法就是给其中一个元素加一个父元素，再给父元素触发BFC */
+        }
+
+        .father-container {
+            overflow: hidden;
+        }
+        /* 这样就解决了相邻兄弟元素的外边距合并问题 */
+    </style>
+</head>
+
+<body>
+    <div class="blue">
+        <div class="red"></div>
+    </div><br><br><br><br><br><br><br><br>
+    <div class="father-container">
+        <div class="green"></div>
+    </div>
+    <div class="purple"></div>
+</body>
+
+</html>

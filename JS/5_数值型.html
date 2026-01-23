@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 0.1;
+        var b = 0.2;
+        // 浮点数相加
+        console.log(a + b);
+        // 由于浮点数精度问题，结果并不是预期的0.3，而是0.30000000000000004
+        // 减法
+        console.log(b - a); // 0.1
+        // 乘法
+        console.log(a * b); // 0.020000000000000004
+        // 除法
+        console.log(b / a); // 2
+        // 取余
+        console.log(5 % 2); // 1
+
+        console.log("a" * 2);
+        // NaN表示不是一个合法的数字
+        console.log("3" * 2);
+        // 如果字符串可以转换为数字，则会先转换为数字，然后进行运算
+    </script>
+</body>
+</html>

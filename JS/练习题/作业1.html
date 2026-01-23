@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // if (confirm("是否开始游戏？")) {
+
+        //     let target = Math.floor(Math.random() * 100) + 1;
+
+        //     while (true) {
+        //         let guess = prompt("请输入1-100之间的数字：");
+        //         if (guess == target) {
+        //             alert("正确！");
+        //             break;
+        //         }
+        //         alert(guess > target ? "大了" : "小了");
+        //     }
+        // }
+
+        if (confirm("是否开始游戏？")){
+
+            var target = Math.floor(Math.random() * 100) + 1;
+
+            while (true){
+                var guess = prompt("请输入1到100之间的数字:");
+
+                if(guess == target){
+                    alert("正确！")
+                    break;
+                }   
+                alert(guess > target ? "大了" : "小了")
+            }
+        }
+    </script>
+</body>
+
+</html>

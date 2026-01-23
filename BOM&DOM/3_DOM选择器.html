@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box1"></div>
+    <h1>hello,world</h1>
+    <div id="id1"></div>
+    <script>
+        // 通过标签名获取元素
+        // 返回的是一个HTMLCollection 类数组对象
+        // 类数组对象不是真正的数组,而只是类似于数组
+        var oH1 = document.getElementsByTagName("h1");
+        console.log(oH1[0]);
+
+        // 通过类名获取元素
+        var oBox1 = document.getElementsByClassName("box1");
+        console.log(oBox1);
+        console.log(oBox1[0]);
+
+        // 通过id获取元素
+        // 返回的是一个元素对象,不是类数组对象,不需要下标
+        var oId1 = document.getElementById("id1");
+        console.log(oId1);
+    </script>
+</body>
+</html>

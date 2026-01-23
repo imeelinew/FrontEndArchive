@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Button</button>
+    <script>
+        var oBtn = document.querySelector("button");
+        var num = 1;
+        oBtn.onclick = function(){
+            num++
+            //Window location是浏览器左上角的箭头
+            // 向hash添加内容 添加历史记录
+            window.location.hash = "code"+num;
+            
+            window.onhashchange = function(){
+                console.log("hashchange");
+            }
+        }
+    </script>
+</body>
+</html>

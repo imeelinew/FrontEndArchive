@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rem & em</title>
+    <style>
+        html{
+            font-size: 30px;
+            /* 浏览器有默认字体大小 16px */
+            /* 页面中字体最小是12px */
+        }
+        .box{
+            font-size: 20px;
+        }
+        .box1{
+            /* font-size: 2em;
+            width: 3em;
+            height: 3em;
+            border: 0.5em solid black; */
+            /* em是相对于父元素的字体大小,比如父元素为20px,2em就是40px */
+        }
+        .box1{
+            /* rem是相对于根元素字体大小,就是html的字体大小 */
+            font-size: 2rem;
+            width: 3rem;
+            height: 3rem;
+            border: 0.5em solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box1">
+            hello,world
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            background-color: rgb(71, 154, 255);
+            height: 400px;
+            width: 400px;
+        }
+
+        .box2 {
+            background-color: rgb(255, 127, 127);
+            height: 200px;
+            width: 200px;
+        }
+
+        .box3 {
+            background-color: rgb(127, 255, 127);
+            height: 100px;
+            width: 100px;
+        }
+
+        .box1 > div {
+            background: rgb(24, 201, 157);
+        /* 这是子代选择器，只选择自己的子代，把>去掉会导致选box3 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="box2">
+            <div class="box3"></div>
+        </div>
+
+    </div>
+</body>
+
+</html>

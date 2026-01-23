@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        // forEach 是数组下的遍历方法，参数的部分是函数；
+        // 函数内部还有两个参数，第一个参数是当前遍历到的元素，第二个参数是当前遍历到的元素的索引   
+        arr.forEach(function (item, index) {
+            console.log(item, index);
+        })
+
+        console.log("\n");
+
+        var arr2 = ["a","b",1,2,3]
+        // 数组过滤 filter
+        // filter每次遍历的过程中如果遇到return的值为true的情况下，会把当前遍历的值作为新数组的元素
+        var arr3 = arr2.filter(function(item, index){
+            console.log(item, index);
+            if(item >= 0 && item <= 9){
+                return true;
+            }else{
+                return false;
+            }
+        })
+        console.log(arr3);
+
+        // map函数：
+        // map每次遍历的过程中，都会执行return语句，
+        // 如果return语句返回的值，会作为新数组的元素
+        var arr4 = [1,2,3,4,5,6,7,8,9];
+        var arr5 = arr4.map(function(item, index){
+            return item * 10;
+        })
+        console.log(arr5);
+    </script>
+</body>
+
+</html>

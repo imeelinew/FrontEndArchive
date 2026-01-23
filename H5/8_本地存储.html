@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //local永久存储,除非手动删除
+        //session会话结束自动删除
+        localStorage.setItem("username", "ZhangSan");
+        sessionStorage.setItem("sex", "Male");
+
+        //获取数据
+        var username = localStorage.getItem("username");
+        console.log(username);
+
+        //删除数据 - 删除指定key的数据
+        // localStorage.removeItem("key") - 删除localStorage中指定的数据
+        // sessionStorage.removeItem("key") - 删除sessionStorage中指定的数据
+        localStorage.removeItem("username");  // 删除localStorage中的username
+        sessionStorage.removeItem("sex");     // 删除sessionStorage中的sex
+
+
+        //清空数据,一次性全部清空
+        // localStorage.clear() - 清空localStorage中所有数据
+        // sessionStorage.clear() - 清空sessionStorage中所有数据
+        // localStorage.clear();   // 清空localStorage所有数据(谨慎使用!)
+        // sessionStorage.clear(); // 清空sessionStorage所有数据(谨慎使用!)
+
+        //注意事项
+        // local和session存储大概5MB左右 只能纯属字符串
+        // cookie大概4KB
+        // cookie会自动过期,能设置过期时间;local永久存储除非删除,session会话结束自动删除
+        //cookie会随着请求发送到服务器,storage不会
+
+
+    </script>
+
+</body>
+
+</html>

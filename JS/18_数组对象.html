@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [1,2,3,4,5,6];
+        console.log(arr);
+
+        var arr1 = [1,2,3];
+        var arr2 = [4,5,6];
+        //concat()方法，连接数组    
+        console.log(arr1.concat(arr2));
+
+        //includes()方法，判断是否包含指定元素，返回布尔值  
+        console.log("--------------includes--------------");    
+        var arr3 = ["a","b",1,2,3];
+        console.log(arr3.includes("b"));
+        console.log(arr3.includes("c"));
+
+        //indexOf()方法，查找指定元素的位置，如果没有找到返回-1
+        console.log("--------------indexOf--------------"); 
+        console.log(arr3.indexOf("b"));
+        console.log(arr3.indexOf("c")); 
+
+        //join()方法，将数组转换为字符串,与字符串中的split()类似    
+        console.log("--------------join--------------");
+        console.log(arr3.join("-"));
+
+        // push()方法，向数组末尾添加一个或多个元素
+        console.log("--------------push--------------");
+        arr3.push("d");
+        console.log(arr3);
+
+        // pop()方法，删除数组末尾的元素
+        console.log("--------------pop--------------"); 
+        arr3.pop();
+        console.log(arr3);  
+
+        // shift()方法，删除数组开头的元素
+        console.log("--------------shift--------------");   
+        arr3.shift();
+        console.log(arr3);  
+
+        // unshift()方法，向数组开头添加一个或多个元素
+        console.log("--------------unshift--------------"); 
+        arr3.unshift("x");
+        console.log(arr3);
+        
+        // slice()方法，提取数组的一部分，并返回一个新的数组    
+        console.log("--------------slice--------------");
+        var sliceArr = [1,2,3,4,5,6];
+        console.log(sliceArr.slice(1,3));  
+        console.log(sliceArr);
+
+        //splice()方法，删除数组的一部分，并返回被删除的元素
+        console.log("--------------splice--------------");
+        var spliceArr = [1,2,3,4,5,6];
+        console.log(spliceArr.splice(1,3));  
+        console.log(spliceArr); 
+
+    </script>   
+</body>
+</html>

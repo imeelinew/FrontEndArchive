@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box" id="div1">HELLO</div>
+    <img src="" alt="图片">
+    <script>
+        var oBox = document.getElementById("div1");
+        var oImg = document.getElementsByTagName("img")[0];
+        oBox.onmouseover = function(){
+            //setAttribute方法用来设置元素属性
+            //setAttribute(属性名,属性值)
+            oImg.setAttribute("src","ai.png");
+
+            //getAttribute方法用来获取元素属性
+            //getAttribute(属性名)
+            console.log(oImg.getAttribute("src"));
+        }
+    </script>
+</body>
+</html>

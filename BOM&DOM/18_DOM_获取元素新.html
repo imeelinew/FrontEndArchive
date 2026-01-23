@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box2">hello</div>
+        <div class="box3">hello</div>
+    </div>
+
+    <script>
+        //获取子节点
+        var oBox1 = document.getElementsByClassName("box")[0];
+        var oBox2 = document.getElementsByClassName("box2")[0];
+        var oBox3 = document.getElementsByClassName("box3")[0];
+        // childNodes获取到的节点列表(类数组)包括文本节点 还有 元素节点
+        var childNode = oBox1.childNodes;
+        // children 获取到的是一个HTML集合(类数组)仅包含元素节点
+        var children = oBox1.children;
+        console.log(childNode);
+        console.log(children);
+
+        var oBox2 = document.getElementsByClassName("box2")[0];
+        // parentElement获取到的是父元素节点 单个元素
+        var parent = oBox2.parentElement;
+        console.log(parent);
+        // nextSibling获取后边的兄弟节点,但是包含文本节点 单个节点不是集合
+        var nextSibling = oBox2.nextSibling;
+        var nextElement = oBox2.nextElementSibling;
+        console.log(nextSibling);
+        console.log(nextElement);
+
+        // previousSibling获取前边的兄弟节点,但是包含文本节点 单个节点不是集合
+        var previousSibling = oBox3.previousSibling;
+        console.log(previousSibling);
+    </script>
+</body>
+
+</html>

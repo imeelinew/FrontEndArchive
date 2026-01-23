@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background: tomato;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+
+    <script>
+        oBox = document.getElementsByClassName("box")[0];
+
+        oBox.onmousedown = function (e) {
+            positionX = e.clientX - oBox.offsetLeft;
+            positionY = e.clientY - oBox.offsetTop;
+
+            document.onmousemove = function (e) {
+                oBox.style.top = e.clientY - positionY + "px";
+                oBox.style.left = e.clientX - positionX + "px";
+            };
+            document.onmouseup = function (e) {
+                console.log("鼠标抬起");
+                document.onmouseup = null;
+                document.onmousemove = null;
+                console.log("解除事件");
+            };
+        }
+
+
+    </script>
+</body>
+
+</html>

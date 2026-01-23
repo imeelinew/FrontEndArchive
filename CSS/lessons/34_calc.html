@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float</title>
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body-left{
+    width: 375px;
+    height: 100vh;
+    float: left;
+    background-color: lightcoral;
+}
+.body-right{
+    width: calc(100% - 375px);
+    height: 100vh;
+    float: left;
+    background-color: lightblue;
+}
+/* .login-card{
+    width: 400px;
+    height: 550px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+} */
+</style>
+<body>
+    <div class="body-left"></div>
+    <div class="body-right">
+        <div class="login-card"></div>
+    </div>
+            
+</body>
+</html>

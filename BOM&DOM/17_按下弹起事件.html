@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background: tomato;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        var oBox = document.getElementsByClassName("box")[0];
+
+        //鼠标按下事件
+        oBox.onmousedown = function(){
+            console.log("按下");
+        }
+
+        //鼠标弹起事件
+        oBox.onmouseup = function(){
+            console.log("弹起");
+        }
+
+        //鼠标移动事件
+        oBox.onmousemove = function(){
+            console.log("移动");
+        }
+    </script>
+</body>
+</html>

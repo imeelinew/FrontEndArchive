@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            /* display: inline-block; */
+        }
+
+        .item-card {
+            width: 234px;
+            height: 300px;
+            border: 1px solid black;
+            text-align: center;
+            padding: 20px 0;
+            margin: 100px auto;
+            box-sizing: border-box;
+        }
+
+        .earbuds-pic {
+            width: 160px;
+            height: 160px;
+        }
+
+        .num {
+            font-size: 14px;
+            color: #FF6700;
+        }
+
+        .del-num {
+            font-size: 14px;
+            color: gray;
+        }
+
+        .item-description {
+            font-size: 12px;
+            overflow: hidden;
+            text-wrap: nowrap;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin: 0 10px 10px;
+            color: gray;
+        }
+
+        .item-name {
+            font-size: 14px;
+            font-weight: 200;
+            margin: 0 10px 2px;
+        }
+
+        .item-price {
+            margin: 0 10px 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <a href="https://www.mi.com/shop/buy/detail?product_id=20796"> -->
+    <div class="item-card">
+        <a href="https://www.mi.com/shop/buy/detail?product_id=20796">
+            <img class="earbuds-pic" src="../assets/earbuds.png" alt="">
+            <h3 class="item-name">REDMI Buds 6 Pro</h3>
+            <p class="item-description">小米首发圈瓷同轴三单元 | 55dB深度降噪 | 无级动态降噪技术</p>
+            <p class="item-price">
+                <span class="num">369元起</span>
+                <del class="del-num">399元</del>
+            </p>
+        </a>
+    </div>
+    <!--块元素横向排列尽量别用inline-block -->
+    <div class="item-card">
+        <a href="https://www.mi.com/shop/buy/detail?product_id=20796">
+            <img class="earbuds-pic" src="../assets/earbuds.png" alt="">
+            <h3 class="item-name">REDMI Buds 6 Pro</h3>
+            <p class="item-description">小米首发圈瓷同轴三单元 | 55dB深度降噪 | 无级动态降噪技术</p>
+            <p class="item-price">
+                <span class="num">369元起</span>
+                <del class="del-num">399元</del>
+            </p>
+        </a>
+    </div>
+    <!-- </a> -->
+</body>
+
+</html>

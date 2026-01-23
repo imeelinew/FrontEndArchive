@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">hello</div>
+    <div id="box">world</div>
+
+    <script>
+        // queryselector() 获取单个元素,括号里写css选择器
+        // queryselectorAll() 获取多个元素,括号里写css选择器
+        var oBox = document.querySelector(".box");
+        var aBox = document.querySelectorAll(".box");
+
+        console.log(oBox);
+        console.log(aBox);
+    </script>
+</body>
+</html>

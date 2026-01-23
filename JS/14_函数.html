@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n = 5;
+        // 定义函数使用function 函数名字加括号，括号内是参数（形式参数）
+        function foo(i){
+            // 参数仅在函数内部有效
+            console.log(i + 10);
+        }
+        // 调用函数时传入实参
+        foo(n);
+
+        // 作用域
+        // 全局作用域，任何地方都可以访问
+        var a = 1;
+        function foo1(){
+            console.log(a); // 可以访问全局变量a
+        }
+        function foo2(x){
+            // 函数作用域（局部作用域）
+            var y = 10;
+            console.log(x + y);
+        }
+        foo2(6);
+        // console.log(y); // 报错，y在函数外不可见，函数内定义的变量是局部变量，只能在函数内部使用
+
+        // 多参数，形参可以有多个，用逗号隔开
+        function sum(x, y){
+            console.log(x + y);
+        }
+        sum(3, 4);
+
+        // 函数返回值
+        function sum(x, y){
+            return x + y;
+        }
+        var result = sum(3, 4);
+        console.log(result);
+
+        function foo5(x){
+            console.log(x);
+            // return除了返回结果，还可以结束函数，后面的代码不会执行
+            return x + 10;
+        }
+        var result2 = foo5(5);
+        console.log("result2: " + result2);
+
+        // 函数嵌套
+        function foo6(x){
+            var k = 10;
+            function foo7(y){
+                console.log(x + y);
+                console.log(k);
+                // 内部函数可以调用外部函数的局部变量
+            }
+            foo7("foo7: " + 20);
+        }
+        foo6(10);
+
+        // foo7(20); // 报错，foo7未定义，因为在函数内部定义的函数，函数外部无法访问
+
+        // 把函数当作返回值使用
+
+
+        // 如果function没有函数名，就是匿名函数
+        // 匿名函数一般不能直接使用，实际使用时会将它赋值给一个变量
+        var anonymous = function(x){
+            console.log(x);
+        }
+        console.log("anonymous");
+        anonymous(10);
+
+        // 特殊情况
+        // js允许先调用函数，再定义函数
+        foo8(10);
+        function foo8(x){
+            console.log(x);
+        }
+        // 如果函数没有返回值，接收到的就是undefined
+        var result3 = foo8(10);
+        console.log(result3);
+    </script>
+</body>
+</html>

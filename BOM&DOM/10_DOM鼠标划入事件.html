@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+    }
+</style>
+<body>
+    <div class="box"></div>
+    <script>
+        var oBox = document.getElementsByClassName("box")[0];
+        //鼠标移入事件,mouseover
+        oBox.onmouseover = function () {
+            console.log("鼠标移入");
+            oBox.style.backgroundColor = "blue";
+        }
+        //鼠标移出事件,mouseout
+        oBox.onmouseout = function () {
+            console.log("鼠标移出");
+            oBox.style.backgroundColor = "red";
+        }
+    </script>
+</body>
+</html>

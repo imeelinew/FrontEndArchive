@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box1 {
+            width: 300px;
+            height: 100px;
+            background-color: pink;
+            margin-bottom: 20px;
+        }
+
+        .box2 {
+            width: 300px;
+            height: 100px;
+            background-color: pink;
+            margin-bottom: 20px;
+        }
+
+        .box3 {
+            width: 300px;
+            height: 100px;
+            background-color: pink;
+        }
+        .box:hover {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1 box"></div>
+    <div class="box2 box"></div>
+    <div class="box3 box"></div>
+    <script>
+        var oBox1 = document.getElementsByClassName("box1")[0];
+        var oBox2 = document.getElementsByClassName("box2")[0];
+        var oBox3 = document.getElementsByClassName("box3")[0];
+
+        function hoverAnimation(element) {
+            var timer;
+            element.onmouseover = function () {
+                clearInterval(timer);
+                timer = window.setInterval(function () {
+                    var width = element.offsetWidth;
+                    width += 5;
+                    element.style.width = width + "px";
+                    if (width >= 800) {
+                        clearInterval(timer);
+                    }
+                }, 6);
+            }
+            element.onmouseout = function () {
+                clearInterval(timer);
+                timer = window.setInterval(function () {
+                    var width = element.offsetWidth;
+                    width -= 3;
+                    element.style.width = width + "px";
+                    if (width <= 300) {
+                        clearInterval(timer);
+                    }
+                }, 6);
+            }
+        }
+
+        hoverAnimation(oBox1);
+        hoverAnimation(oBox2);
+        hoverAnimation(oBox3);
+    </script>
+</body>
+
+</html>

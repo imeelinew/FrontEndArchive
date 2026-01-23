@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">hello, world</div>
+    <script>
+        var oBox = document.getElementsByClassName("box")[0];
+        oBox.oncontextmenu = function(e){
+            console.log("右键点击了");
+            return false;
+        }
+    </script>
+</body>
+</html>

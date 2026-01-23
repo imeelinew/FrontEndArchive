@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定时函数
+        // setTimeout 第一个参数是函数，第二个参数是延迟时间，单位是毫秒
+        //不管是setTimeout还是alert，都是window对象的方法
+        setTimeout(function(){
+            console.log('1秒后弹出');
+        },1000)
+
+        // setInterval 第一个参数是函数，第二个参数是延迟时间，单位是毫秒
+        var intervalId1 = setInterval(function(){
+            console.log('每隔2秒后弹出');
+        },2000)
+        var intervalId2 = setInterval(function(){
+            console.log('每隔2秒后弹出');
+        },2000)
+
+        clearInterval(intervalId1);
+        // 一旦被清除，就不能再使用
+
+        console.log(intervalId1)
+        console.log(intervalId2)
+    </script>
+</body>
+</html>

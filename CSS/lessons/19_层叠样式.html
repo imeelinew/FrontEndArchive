@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        color: red;
+    }
+
+    div {
+        font-size: 50px;
+        color: blue;
+        /* 此时蓝色不生效，因为层叠样式是多个选择器同时作用于一个元素，最终生效的样式是层叠样式表中最后出现的样式 */
+        /* 当冲突的时候，会根据一个原则进行取舍——权重值 */
+    }
+
+    * {
+        color: purple !important;
+        /* !important 是一个特殊的关键字，权重值最高 只对当前的属性生效*/
+    }
+
+    #div1 {
+        color: green;
+    }
+
+    /* 通配符选择器0 < 标签选择器与伪元素选择器1 < 类选择器与伪类选择器和属性选择器10 < id选择器100 < 内联样式1000 < !important10000 */
+    /* 伪类选择器和属性选择器的权重值等同于类选择器 */
+    /* 伪元素选择器权重等于标签选择器 */
+</style>
+
+<body>
+    <!-- 内联样式一般留给js用，所以尽量不在内联样式写css -->
+    <div class="box" id="div1" style="color: yellow;">hello,world</div>
+</body>
+
+</html>

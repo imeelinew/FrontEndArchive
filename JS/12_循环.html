@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+        // 第一条语句一般为定义变量，第二条控制循环的次数，第三条每次循环结束后执行的语句
+        // 第一次循环只执行前两条语句，后续每次循环都执行三条语句
+        for(var i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        }
+
+        console.log("--------------------------------------");
+
+        // while 循环
+        // 括号里只有一条语句，成立就执行循环体内的语句，否则结束循环
+        var j = 0;
+        while(j < arr.length) {
+            console.log(arr[j]);
+            j++;
+        }
+
+        console.log("--------------------------------------");
+
+        // do...while 循环
+        // 区别在于 do...while 循环至少会执行一次循环体内的语句
+        var k = 0;
+        do {
+            console.log(arr[k]);
+            k++;
+        } while(k < arr.length);
+
+        console.log("--------------------------------------");
+
+        // 循环中如果遇到continue，结束本次循环
+        for(var m = 0; m < arr.length; m++) {
+            if(arr[m] == 5) {
+                continue; 
+            }
+            console.log(arr[m]); 
+        }
+
+        console.log("--------------------------------------");
+     
+        // 循环中如果遇到break，结束整个循环
+        for(var n = 0; n < arr.length; n++) {
+            if(arr[n] == 5) {
+                break; 
+            }
+            console.log(arr[n]); 
+        }
+
+        // 如果循环没有写{}，那么只会把紧跟在循环语句后的第一条语句作为循环体
+        for(var p = 0; p < arr.length; p++) 
+            console.log(arr[p]);
+    </script>
+</body>
+</html>

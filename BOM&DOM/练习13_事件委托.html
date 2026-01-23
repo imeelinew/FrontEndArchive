@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件委托练习</title>
+</head>
+
+<body>
+    <ul></ul>
+    <button>add</button>
+    <script>
+        var oBtn = document.getElementsByTagName("button")[0];
+        var oUl = document.getElementsByTagName("ul")[0];
+        var i = 1;
+
+        oBtn.onclick = function () {
+            var newLi = document.createElement("li");
+            newLi.innerText = i;
+            i++;
+            oUl.append(newLi);
+        }
+
+        oUl.onclick = function (event) {
+            console.log(event.target.innerText);
+        }
+    </script>
+</body>
+
+</html>

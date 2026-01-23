@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            perspective: 1000px;
+        }
+
+        .container {
+            height: 400px;
+            width: 400px;
+            border: 2px dashed black;
+            position: relative;
+            margin: 200px auto;
+            transform-style: preserve-3d;
+        }
+
+        .coupon1,
+        .coupon2 {
+            /* border: 1px solid black; */
+            width: 400px;
+            height: 140px;
+            position: absolute;
+        }
+
+        .coupon1 {
+            top: 30px;
+            transform: rotate(20deg);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .coupon1:hover {
+            transform: rotate(0deg) scale(2) translateY(-20px);
+            z-index: 10;
+        }
+
+        .coupon2 {
+            top: 200px;
+            transform: rotate(-20deg);
+            position: absolute;
+            transition: all 0.5s ease-in-out;
+            z-index: 1;
+        }
+
+        .coupon2:hover {
+            transform: rotate(0deg) scale(2) translateY(-20px);
+            z-index: 10;
+        }
+
+        .coupon1 img {
+            width: 400px;
+            height: 140px;
+            border: 1px solid black;
+        }
+
+        .coupon2 img {
+            width: 400px;
+            height: 140px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="coupon1">
+            <img src="../BOM&DOM/img/coupon1.png" alt="">
+        </div>
+        <div class="coupon2">
+            <img src="../BOM&DOM/img/coupon2.png" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

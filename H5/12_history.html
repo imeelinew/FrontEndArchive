@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button>添加历史记录</button>
+    <script>
+        var oBtn = document.querySelector("button");
+        var num = 0;
+        oBtn.onclick = function(){
+            //添加历史记录
+            num++;
+            history.pushState("h1" + num,"","");
+            
+        }
+        window.onpopstate = function(e){
+            console.log("popstate",e.state);
+        }
+
+        //hash 和 history区别,hash是url片段,不美观
+    </script>
+</body>
+</html>

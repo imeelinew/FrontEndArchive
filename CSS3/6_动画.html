@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background: red;
+            margin: 100px auto;
+        }
+
+        .box:hover {
+            /* animation是用来定义动画的简写属性
+            keyframe用来定义关键帧 二者配合使用 */
+            /* 简写语法: animation: name duration timing-function delay iteration-count direction fill-mode; */
+            /* 例如: animation: foo 1s ease-in-out infinite forwards; */
+            /* 下面使用单独属性的写法，更清晰 */
+            animation-name: foo;
+            /* 动画名称 */
+            animation-duration: 1s;
+            /* 持续时间 */
+            animation-timing-function: ease-in-out;
+            /* 速度曲线 */
+            animation-iteration-count: infinite;
+            /* 播放次数（infinite 表示无限循环） */
+            animation-fill-mode: forwards;
+            /* 动画结束后的状态（forwards 表示保持在最后一帧） */
+        }
+
+        @keyframes foo {
+
+            /* from和to是关键帧 关键词后面的foo类似函数,是定义的名称*/
+            from {
+                width: 200px;
+            }
+
+            to {
+                width: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

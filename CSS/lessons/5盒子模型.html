@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            background-color: pink;
+
+            width: 200px;
+            height: 200px;
+            /* 边框 允许有三个值：边框宽度 边框样式 边框颜色 */
+            border: 1px solid rgb(0, 0, 0);
+            /* 内边距 边框与内容之间的距离 允许有四个值：上 右 下 左 */
+            padding: 10px;
+            /* 外边距 元素与元素之间的距离 允许有四个值：上 右 下 左 */
+            margin: 10px;
+        }
+        /* 盒子模型中的 分两种：标准盒子模型 和 怪异盒子模型 */
+        /* 标准盒子模型 大小 = 宽高 + 内边距 + 边框宽度 */
+        /* 怪异盒子模型 大小 = 宽高； 用的少*/
+        /* box-sizing用来设置盒子模型的类型 */
+        /* box-sizing: content-box; 标准盒子模型 */
+        /* box-sizing: border-box; 怪异盒子模型 */
+    </style>
+</head>
+<body>
+    <div class="box">hello world</div>
+    <!-- <div class="box">hello world</div> -->
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ========================================
+           Flex布局完整指南
+           ======================================== */
+
+
+        /* ----------------------------------------
+           一、容器属性 (作用于父元素)
+           ---------------------------------------- */
+
+        .container {
+            width: 100%;
+            height: 600px;
+            border: 2px dashed black;
+
+
+            /* 【1】开启flex布局
+               ------------------------------------ */
+            display: flex;
+            /* 给父元素加上flex,子元素默认在主轴上从左向右排列 */
+            /* flex有两个轴: 
+               - 主轴(main axis): 默认水平方向
+               - 交叉轴(cross axis): 默认垂直方向 */
+
+
+            /* 【2】flex-direction: 设置主轴方向
+               ------------------------------------ */
+            /* flex-direction: row;            默认值,主轴水平,起点在左 → */
+            /* flex-direction: row-reverse;    主轴水平,起点在右 ← */
+            /* flex-direction: column;         主轴垂直,起点在上 ↓ */
+            /* flex-direction: column-reverse; 主轴垂直,起点在下 ↑ */
+
+
+            /* 【3】justify-content: 主轴对齐方式
+               ------------------------------------ */
+            /* justify-content: flex-start;    默认值,向主轴起点对齐 */
+            /* justify-content: flex-end;      向主轴终点对齐 */
+            /* justify-content: center;        居中对齐 */
+            /* justify-content: space-between; 两端对齐,元素之间间隔相等 */
+            justify-content: space-around;
+            /* space-around: 每个元素两侧间隔相等,所以元素之间间隔是边缘的2倍 */
+            /* justify-content: space-evenly;  所有间隔完全相等 */
+
+
+            /* 【4】align-items: 交叉轴对齐方式 (单行)
+               ------------------------------------ */
+            /* align-items: stretch;     默认值,如果子元素未设高度,会拉伸填满容器 */
+            /* align-items: flex-start;  向交叉轴起点对齐 */
+            /* align-items: flex-end;    向交叉轴终点对齐 */
+            align-items: center;
+            /* center: 交叉轴居中对齐 */
+            /* align-items: baseline;    以第一行文字基线对齐 */
+
+
+            /* 【5】flex-wrap: 是否换行
+               ------------------------------------ */
+            /* flex-wrap: nowrap;        默认值,不换行,元素会被压缩 */
+            flex-wrap: wrap;
+            /* wrap: 换行,第一行在上方 */
+            /* flex-wrap: wrap-reverse;  换行,第一行在下方 */
+
+
+            /* 【6】align-content: 多行对齐方式
+               ------------------------------------ */
+            /* 注意: 只有换行(多行)时才生效! */
+            /* align-content: stretch;       默认值,各行拉伸填满交叉轴 */
+            /* align-content: flex-start;    向交叉轴起点对齐 */
+            /* align-content: flex-end;      向交叉轴终点对齐 */
+            align-content: center;
+            /* center: 多行整体居中 */
+            /* align-content: space-between; 两端对齐,行间距相等 */
+            /* align-content: space-around;  每行两侧间距相等 */
+            /* align-content: space-evenly;  所有行间距完全相等 */
+
+
+            /* 【7】flex-flow: 复合写法
+               ------------------------------------ */
+            /* flex-flow: <flex-direction> <flex-wrap>; */
+            /* 例如: flex-flow: row wrap; */
+
+
+            /* 【8】gap: 设置子元素间距
+               ------------------------------------ */
+            /* gap: 10px;          行间距和列间距都是10px */
+            /* gap: 10px 20px;     行间距10px,列间距20px */
+            /* row-gap: 10px;      只设置行间距 */
+            /* column-gap: 20px;   只设置列间距 */
+        }
+
+
+        /* ----------------------------------------
+           二、子元素属性 (作用于子元素)
+           ---------------------------------------- */
+
+        .item {
+            width: 100px;
+            height: 100px;
+            background: lightblue;
+            border: 1px solid black;
+            font-size: 40px;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+
+
+            /* 【1】flex-grow: 放大比例
+               ------------------------------------ */
+            /* flex-grow: 0;   默认值,不放大 */
+            /* flex-grow: 1;   等比例瓜分剩余空间 */
+            /* 如果所有子元素flex-grow都为1,则平分剩余空间 */
+            /* 如果一个子元素flex-grow为2,其他为1,则该元素占2份 */
+
+
+            /* 【2】flex-shrink: 缩小比例
+               ------------------------------------ */
+            /* flex-shrink: 1;   默认值,空间不足时等比例缩小 */
+            /* flex-shrink: 0;   不缩小,保持原始尺寸 */
+            /* 数值越大,缩小越多 */
+
+
+            /* 【3】flex-basis: 主轴初始尺寸
+               ------------------------------------ */
+            /* flex-basis: auto;    默认值,取元素本身的width/height */
+            /* flex-basis: 200px;   设置初始主轴尺寸为200px */
+            /* flex-basis: 50%;     设置初始主轴尺寸为容器的50% */
+            /* 优先级: flex-basis > width (当主轴水平时) */
+
+
+            /* 【4】flex: 复合写法 (推荐使用)
+               ------------------------------------ */
+            /* flex: <grow> <shrink> <basis>; */
+            /* flex: 0 1 auto;   默认值 */
+            /* flex: 1;          等同于 flex: 1 1 0% ,常用于等分布局 */
+            /* flex: auto;       等同于 flex: 1 1 auto */
+            /* flex: none;       等同于 flex: 0 0 auto ,固定尺寸不伸缩 */
+
+
+            /* 【5】align-self: 单独设置交叉轴对齐
+               ------------------------------------ */
+            /* 可以覆盖父元素的align-items */
+            /* align-self: auto;        默认值,继承父元素align-items */
+            /* align-self: flex-start;  向交叉轴起点对齐 */
+            /* align-self: flex-end;    向交叉轴终点对齐 */
+            /* align-self: center;      交叉轴居中 */
+            /* align-self: stretch;     拉伸填满 */
+            /* align-self: baseline;    文字基线对齐 */
+
+
+            /* 【6】order: 排列顺序
+               ------------------------------------ */
+            /* order: 0;    默认值 */
+            /* order: -1;   数值越小越靠前 */
+            /* order: 1;    数值越大越靠后 */
+        }
+
+
+        /* ----------------------------------------
+           三、常用布局示例
+           ---------------------------------------- */
+
+        /* 【水平垂直居中】 */
+        .center-demo {
+            display: flex;
+            justify-content: center;
+            /* 主轴居中 */
+            align-items: center;
+            /* 交叉轴居中 */
+        }
+
+        /* 【等分布局】 */
+        .equal-demo {
+            display: flex;
+        }
+
+        .equal-demo .item {
+            flex: 1;
+            /* 所有子元素等分空间 */
+        }
+
+        /* 【两端固定,中间自适应】 */
+        .holy-grail-demo {
+            display: flex;
+        }
+
+        .holy-grail-demo .left,
+        .holy-grail-demo .right {
+            width: 200px;
+            /* 固定宽度 */
+            flex-shrink: 0;
+            /* 不缩小 */
+        }
+
+        .holy-grail-demo .center {
+            flex: 1;
+            /* 自适应填充 */
+        }
+
+        /* 【底部固定】 */
+        .sticky-footer-demo {
+            display: flex;
+            flex-direction: column;
+            /* 主轴改为垂直 */
+            min-height: 100vh;
+        }
+
+        .sticky-footer-demo .content {
+            flex: 1;
+            /* 内容区自适应 */
+        }
+
+        .sticky-footer-demo .footer {
+            height: 60px;
+            /* 底部固定高度 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+        <div class="item">11</div>
+        <div class="item">12</div>
+    </div>
+</body>
+
+</html>

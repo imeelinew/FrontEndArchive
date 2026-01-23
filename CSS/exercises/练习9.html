@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+        }
+
+        .container {
+            width: 650px;
+            height: 700px;
+            background-color: rgb(199, 232, 199);
+            margin: 0 auto;
+            margin-top: 80px;
+            border-radius: 20px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .meta {
+            text-align: center;
+        }
+
+        .meta-title {
+            color: green;
+        }
+
+        .inner-container {
+            width: 550px;
+            height: 450px;
+            margin: 0 auto;
+            border-radius: 20px;
+            background-color: lightblue;
+            position: relative;
+        }
+
+        .circle {
+            border-radius: 50%;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .red-circle {
+            width: 60px;
+            height: 60px;
+            background-color: rgb(234, 84, 84);
+            border: 2px solid white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -30px;
+            margin-top: -30px;
+            line-height: 60px;
+            color: white;
+            font-size: 16px;
+        }
+
+        .blue-circle {
+            height: 100px;
+            width: 100px;
+            background-color: rgb(64, 188, 230);
+            border: 2px solid white;
+            line-height: 100px;
+            color: white;
+            text-align: center;
+            font-size: 16px;
+            position: absolute;
+            top: 50%;
+            left: 15%;
+        }
+
+        .blue-circle:hover {
+            position: absolute;
+            top: 50%;
+            left: 15%;
+            height: 150px;
+            width: 150px;
+            line-height: 150px;
+            margin-left: -25px;
+            margin-top: -25px;
+            font-size: 22px;
+            transition: all 0.2s ease;
+        }
+
+        .red-circle:hover {
+            width: 80px;
+            height: 80px;
+            margin-left: -40px;
+            margin-top: -40px;
+            line-height: 80px;
+            font-size: 22px;
+            transition: all 0.2s ease;
+
+        }
+
+        .yellow-circle {
+            height: 80px;
+            width: 80px;
+            background-color: rgba(241, 241, 115);
+            border: 2px solid white;
+            line-height: 80px;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            font-size: 16px;
+            position: absolute;
+            top: 40%;
+            left: 20%;
+        }
+
+        .yellow-circle:hover {
+            height: 100px;
+            width: 100px;
+            line-height: 100px;
+            font-size: 22px;
+            margin-left: -10px;
+            margin-top: -10px;
+            z-index: 1;
+            transition: all 0.2s ease;
+        }
+
+        .ellipse {
+            width: 30%;
+            height: 20%;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            position: absolute;
+            top: 25%;
+            left: 15%;
+        }
+
+        .site-footer {
+            height: 80px;
+            font-size: 25px;
+            color: rgb(249, 166, 64);
+            text-align: center;
+            background-color: bisque;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .meta-desc {
+            margin: 0;
+            width: 310px;
+            margin: 0 auto;
+        }
+
+        h5 {
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="meta">
+                <h1 class="meta-title">趣味气泡position练习</h1>
+                <h4 class="meta-desc"> 任务：观察并且理解气泡的定位方式，鼠标悬停起泡试试看！</h4>
+                <h5 style="color: gray;"> (气泡用absolute，气泡区用relative，底部说明用fixed)</h5>
+            </div>
+            <section class="inner-container">
+                <div class="red-circle circle">A
+                    <div class="ellipse"></div>
+                </div>
+                <div class="yellow-circle circle">B
+                    <div class="ellipse"></div>
+                </div>
+                <div class="blue-circle circle">C
+                    <div class="ellipse"></div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="site-footer">
+            <p>本页面用于练习postion:relative / absolute / fixed 及 hover/伪元素效果</p>
+        </div>
+    </footer>
+</body>
+
+</html>

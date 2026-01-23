@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function calculatePi(n) {
+        //     var sum = 0;
+        //     var sign = 1;
+
+        //     for (var i = 1; i <= n; i++) {
+        //         sum = sum + sign * (1 / (2 * i - 1));
+        //         sign = sign * (-1);
+        //     }
+
+        //     return sum * 4;
+        // }
+
+        // document.write("n=100 时，π ≈ " + calculatePi(100) + "<br>");
+        // document.write("n=500 时，π ≈ " + calculatePi(500) + "<br>");
+        // document.write("n=1000 时，π ≈ " + calculatePi(1000) + "<br>");
+        // document.write("n=10000 时，π ≈ " + calculatePi(10000) + "<br>");
+
+
+        function calculatePi(n){
+            var sum = 0;
+            var sign = 1;
+
+            for (var i = 1; i <= n; i++){
+                sum = sum + sign * (1 / (2 * i - 1));
+                sign = sign * (-1);
+            }
+
+            return sum * 4;
+        }
+        document.write(calculatePi(100) + "<br>");
+        document.write(calculatePi(500) + "<br>");
+        document.write(calculatePi(1000) + "<br>");
+        document.write(calculatePi(10000) + "<br>");
+    </script>
+</body>
+
+</html>

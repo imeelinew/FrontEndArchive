@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function CollectDigits(s){
+        //     var result = "";
+        //     for(var i = 0; i < s.length; i++){
+        //         var char = s[i];
+
+        //         if(char >= '0' && char <= '9'){
+        //             result += char;
+        //         }
+        //     }
+        //     return result;
+        // }
+        // document.write(CollectDigits("1abc23def4"));
+
+        function CollectDigits(s) {
+            var arr = s.split("");
+
+            var digits = arr.filter(function (item) {
+                return item >= '0' && item <= '9';
+            })
+            return document.write(digits.join(""));
+        }
+
+        CollectDigits("1s51d651875d8g21d6h");
+    </script>
+</body>
+
+</html>

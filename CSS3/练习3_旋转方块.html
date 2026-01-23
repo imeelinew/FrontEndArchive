@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            perspective: 800px;
+        }
+
+        .container {
+            width: 304px;
+            height: 304px;
+            border: 2px dashed black;
+            margin: 400px auto;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: spinning 3s linear infinite;
+        }
+
+        @keyframes spinning {
+            from {
+                transform: rotateY(0deg);
+            }
+
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+
+        .face {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            color: white;
+            font-size: 100px;
+            text-align: center;
+            line-height: 300px;
+            opacity: 0.5;
+        }
+
+        #face1 {
+            background: red;
+            transform: translateZ(150px);
+        }
+
+        #face2 {
+            background: green;
+            left: -300px;
+            transform: rotateY(270deg) translateX(150px);
+            transform-origin: right;
+        }
+
+        #face3 {
+            background: blue;
+            left: 300px;
+            transform: rotateY(90deg) translateX(-150px);
+            transform-origin: left;
+        }
+
+        #face4 {
+            background: yellow;
+            top: -300px;
+            transform: rotateX(-90deg) translateY(150px);
+            transform-origin: bottom;
+        }
+
+        #face5 {
+            background: orange;
+            top: 300px;
+            transform: rotateX(90deg) translateY(-150px);
+            transform-origin: top;
+        }
+
+        #face6 {
+            background: purple;
+            transform: translateZ(-150px) rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="face" id="face1">1</div>
+        <div class="face" id="face2">2</div>
+        <div class="face" id="face3">3</div>
+        <div class="face" id="face4">4</div>
+        <div class="face" id="face5">5</div>
+        <div class="face" id="face6">6</div>
+    </div>
+</body>
+
+</html>

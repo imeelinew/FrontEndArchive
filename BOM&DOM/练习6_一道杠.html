@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 300px;
+            height: 100px;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        var oBox = document.getElementsByClassName("box")[0];
+        var timer;
+        oBox.onmouseover = function () {
+            clearInterval(timer);
+            console.log("清除计时器");
+            timer = setInterval(function () {
+                var width = oBox.offsetWidth;
+                width += 5;
+                oBox.style.width = width + "px";
+                console.log("宽度增加");
+                if (width >= 600) {
+                    clearInterval(timer);
+                    console.log("最大值");
+                }
+            }, 4);
+        }
+        oBox.onmouseout = function () {
+            clearInterval(timer);
+            console.log("清除计时器");
+            timer = setInterval(function () {
+                var width = oBox.offsetWidth;
+                width -= 5;
+                oBox.style.width = width + "px";
+                console.log("宽度减少");
+                if (width <= 300) {
+                    clearInterval(timer);
+                    console.log("最小值");
+                }
+            }, 4);
+        }
+
+    </script>
+</body>
+
+</html>

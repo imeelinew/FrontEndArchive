@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+<body>
+    <button>按钮</button>
+    <div class="box"></div>
+
+    <script>
+        var oBox = document.getElementsByClassName("box");
+        var oBtn = document.getElementsByTagName("button");
+
+        // style能改变样式,后面跟着样式的具体名称
+        
+        oBtn[0].onclick = function(){
+            oBox[0].style.width = "200px";
+            oBox[0].style.height = "200px";
+            oBox[0].style.backgroundColor = "blue";// 如果样式名称是复合名称,需要使用驼峰命名法
+        }
+    </script>
+</body>
+</html>

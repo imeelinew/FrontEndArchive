@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        background-color: lightgreen;
+    }
+
+    span {
+        width: 200px;
+        height: 200px;
+        background-color: lightgreen;
+        display: block;
+        /* display 可以强制转换标签的形态 */
+        /* 行内元素 不能设置宽高 */
+    }
+</style>
+
+<body>
+    <!-- 共有三种元素 行内元素 块元素 行块元素 -->
+
+
+    <!-- 行内元素 元素等同于标签 -->
+    <!-- 多个相同标签可以在同一行展示 -->
+    <span>行内元素</span>
+    <span>行内元素</span>
+    <span>行内元素</span>
+    <span>行内元素</span>
+    <!-- 行元素 只能设置左右margin 不能设置上下margin -->
+    <!-- 行元素不能当容器使用 内部只能放文字 不能放置其他标签-->
+
+    <!-- 块标签 每个标签占满一整行 -->
+    <div>
+        <h1>块元素</h1>
+    </div>
+    <div>
+        <h1>块元素</h1>
+    </div>
+    <div>
+        <h1>块元素</h1>
+    </div>
+
+    <!-- h标签 p标签 都是块元素 但是内部只能放行标签，不能放块标签 例如在p里面放个div会出问题-->
+
+    <!-- 行块元素 介于行内元素和块元素之间 可以设置宽高 可以在同一行展示 -->
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .loading-bar {
+            width: 500px;
+            height: 50px;
+            border: 2px solid black;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .start-btn {
+            width: 50px;
+            height: 30px;
+            margin-top: 20px;
+        }
+
+        .loading-content {
+            width: 0px;
+            height: 100%;
+            background-color: lightblue;
+        }
+
+        .loading-bar .loading-num {
+            margin-left: 20px;
+            font-size: 20px;
+            line-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="loading-bar">
+        <div class="loading-content">
+            <p class="loading-num">0%</p>
+        </div>
+
+    </div>
+    <button class="start-btn">开始</button>
+    <script>
+        var oLoadingBar = document.getElementsByClassName("loading-bar")[0];
+        var oLoadingNum = document.getElementsByClassName("loading-num")[0];
+        var oLoadingContent = document.getElementsByClassName("loading-content")[0];
+        var oStartBtn = document.getElementsByClassName("start-btn")[0];
+
+        oStartBtn.onclick = function () {
+            var width = oLoadingContent.offsetWidth;
+            var num = 0;
+            var intervalId = setInterval(function () {
+                width += 5;
+                oLoadingContent.style.width = width + "px";
+                num += 1;
+                oLoadingNum.innerHTML = num + "%";
+                if (width >= 500) {
+                    clearInterval(intervalId);
+                }
+            }, 16)
+
+
+        }
+    </script>
+</body>
+
+</html>

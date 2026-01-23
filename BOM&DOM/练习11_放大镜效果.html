@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .small-img {
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            float: left;
+            margin-right: 20px;
+            position: relative;
+        }
+
+        .small-img img {
+            width: 300px;
+            height: 300px;
+        }
+
+        .big-img {
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            position: absolute;
+            top: 0;
+            left: 350px;
+            /* background-image: url(./img/motor.jpg); */
+            overflow: hidden;
+            position: relative;
+            left: 0px;
+            top: 0px;
+        }
+
+        .big-img-pic {
+            position: absolute;
+            width: 900px;
+            height: 900px;
+            left: 0px;
+            top: 0px;
+        }
+
+        .mask {
+            width: 100px;
+            height: 100px;
+            background: white;
+            opacity: 0.5;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="small-img">
+        <div class="mask"></div>
+        <img src="./img/motor.jpg" alt="">
+    </div>
+    <div class="big-img">
+        <img class="big-img-pic" src="./img/motor.jpg" alt="">
+    </div>
+    <script>
+        var oMask = document.getElementsByClassName("mask")[0];
+        var oSmallImg = document.getElementsByClassName("small-img")[0];
+        var oBigImg = document.getElementsByClassName("big-img")[0];
+        var oBigImgPic = document.getElementsByClassName("big-img-pic")[0];
+
+        oSmallImg.onmousemove = function (e) {
+            var positionX = e.clientX;
+            var positionY = e.clientY;
+
+            if(positionX < 50){
+                positionX = 50;
+            }
+            if(positionY < 50){
+                positionY = 50;
+            }
+            if(positionX > 250){
+                positionX = 250;
+            }
+            if(positionY > 250){
+                positionY = 250;
+            }
+            oMask.style.top = positionY - 50 + "px";
+            oMask.style.left = positionX - 50 + "px";
+
+            oBigImgPic.style.top = -(positionY - 50) * 3+ "px";
+            oBigImgPic.style.left = -(positionX - 50) * 3+ "px";
+        };
+    </script>
+</body>
+
+</html>

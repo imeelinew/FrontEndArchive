@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Merge(s1, s2) {
+            var result = "";
+
+            var arr1 = s1.split("");
+            var arr2 = s2.split("");
+            var maxLen = Math.max(arr1.length, arr2.length);
+
+            for (var i = 0; i < maxLen; i++) {
+                if (i < arr1.length) {
+                    result += arr1[i];
+                }
+                if (i < arr2.length) {
+                    result += arr2[i];
+                }
+            }
+            return result;
+        }
+        document.write(Merge("123456789", "abcde"));
+    </script>
+</body>
+
+</html>

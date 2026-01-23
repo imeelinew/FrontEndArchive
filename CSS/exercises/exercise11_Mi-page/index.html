@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>小米账号 - 登录</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="side-illustration"></div>
+        <div class="login-panel">
+            <header>
+                <nav class="site-nav-bar">
+                    <div class="nav-bar-left">
+                        <div class="logo-section">
+                            <span>
+                                <img src="../../assets/1200px-Xiaomi_logo_(2021-).svg.png" alt="" />
+                            </span>
+                            <h1>小米账号</h1>
+                        </div>
+                    </div>
+                    <div class="nav-bar-right">
+                        <div class="menu-section">
+                            <a href="">
+                                <span> 用户协议 </span>
+                            </a>
+                            <a href="">
+                                <span> 隐私政策 </span>
+                            </a>
+                            <a href="">
+                                <span> 帮助中心 </span>
+                            </a>
+                        </div>
+                        <div class="separator-wrapper"></div>
+                        <div class="language-section">
+                            <a href="">
+                                <span>中文(简体)</span>
+                            </a>
+                            <ul class="language-toggle-list">
+                                <li><a href="#">中文(繁體)</a></li>
+                                <li><a href="#">English</a></li>
+                                <li><a href="#">日本语</a></li>
+                                <li><a href="#">阿拉伯语</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <main>
+                <div class="login-card">
+                    <!-- 顶部切换 -->
+                    <div class="tabs">
+                        <button class="tab active">登录</button>
+                        <button class="tab">注册</button>
+                    </div>
+                    <div class="QR-code-wrapper">
+                        <div class="QR-code">
+                            <a href=""><img src="../../assets/二维码.png" alt="" /></a>
+                        </div>
+                    </div>
+
+                    <!-- 登录表单 -->
+                    <form class="login-form">
+                        <div class="account">
+                            <input id="account" type="text" placeholder=" " />
+                            <label for="account">邮箱/手机号码/小米ID</label>
+                        </div>
+
+                        <div class="password">
+                            <input id="password" type="password" placeholder=" " />
+                            <label for="password">密码</label>
+                            <button type="button" class="toggle-password" aria-label="显示或隐藏密码"></button>
+                        </div>
+
+                        <div class="checkbox">
+                            <input id="agree" type="checkbox" />
+                            <label for="agree">已阅读并同意小米账号
+                                    <span><a href="#">使用协议</a></span>
+                                    和
+                                    <span><a href="#">隐私政策</a></span>
+                            </label>
+                        </div>
+
+                        <div class="submit-button">
+                            <button type="submit" class="submit-button">登录</button>
+                        </div>
+
+                        <div class="form-links">
+                            <a href="#">忘记密码？</a>
+                            <a href="#">手机号登录</a>
+                        </div>
+                    </form>
+
+                    <!-- 其他登录方式 -->
+                    <div class="other-login">
+                        <div class="title">其他方式登录</div>
+                        <div class="icons">
+                            <a href=""><img src="../../assets/支付宝.png" alt="" /></a>
+                            <a href=""><img src="../../assets/微信.png" alt="" /></a>
+                            <a href=""><img src="../../assets/微博.png" alt="" /></a>
+                            <a href=""><img src="../../assets/QQ.png" alt="" /></a>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="site-footer">
+                <span>
+                    小米公司版权所有-京ICP备10046444-
+                    <a href="">京公网安备11010802020134号</a>
+                    -京ICP证110507号
+                </span>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

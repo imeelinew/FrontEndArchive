@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        ul {
+            width: 600px;
+            height: 100px;
+            background: gray;
+            display: flex;
+            margin: 100px auto;
+        }
+
+        li {
+            width: 200px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            font-size: 30px;
+        }
+
+        li:hover {
+            background: rgba(0, 0, 0, 0.39);
+            color: white;
+        }
+
+        .active {
+            background: black;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <ul>
+        <li class="first active" data-id="first">First</li>
+        <li class="second" data-id="second">Second</li>
+        <li class="third" data-id="third">Third</li>
+    </ul>
+
+    <script>
+
+        var aLi = document.querySelectorAll("li");
+        var num = 0;
+
+        console.log(aLi[0].dataset.id);
+        for (var i = 0; i < aLi.length; i++) {
+            aLi[i].onclick = function () {
+                var id = this.dataset.id;
+
+                history.pushState(id, "", "");
+                console.log(history.state);
+
+                for (var j = 0; j < aLi.length; j++) {
+                    aLi[j].classList.remove("active");
+                }
+                this.classList.add("active");
+            }
+        }
+        window.onpopstate = function (e) {
+            var id = e.state;
+            console.log(id);
+            for (var k = 0; k < aLi.length; k++) {
+                aLi[k].classList.remove("active");
+            }
+            document.querySelector("[data-id='" + id + "']").classList.add("active");
+        }
+
+
+    </script>
+</body>
+
+</html>

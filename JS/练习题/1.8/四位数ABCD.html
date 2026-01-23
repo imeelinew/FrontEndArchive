@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var result;
+        // for(var i = 1000; i <= 9999; i++){
+        //     if(i % 13 === 0 && Math.floor(i/100) + Math.floor(i/10) === Math.floor(i/1000))
+        //     result = i;
+        // }
+        // document.write(result);
+
+
+        var results = [];
+
+        for (var x = 1000; x <= 9999; x++) {
+            var a = Math.floor(x / 1000);
+            var b = Math.floor(x / 100) % 10;
+            var c = Math.floor(x / 10) % 10;
+
+            if (x % 13 === 0 && a === b + c) {
+                results.push(x);
+            }
+        }
+
+        document.write(results.join('<br>'));
+    </script>
+</body>
+</html>

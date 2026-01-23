@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test</title>
+  </head>
+  <style>
+    #square1 {
+      width: 200px;
+      height: 200px;
+      background-color: rgb(71, 154, 255);
+      /* border: 1px dashed black; */
+    }
+
+    #square2 {
+      width: 0;
+      height: 0;
+      border: 100px solid rgb(255, 127, 127);
+    }
+    #square3 {
+      width: 40%;
+      padding-top: 40%; /* 相对宽度的百分比 → 始终为正方形 */
+      background: pink;
+      /* 这种方法用的比较多 */
+    }
+    #square4 {
+      width: 40%;
+      background: rgb(210, 128, 240);
+    }
+    #square4::after {
+      content: "";
+      display: block;
+      padding-top: 100%;
+    }
+    .circle {
+      width: 200px;
+      height: 200px;
+      /* border-radius: 100px; */
+      border-radius: 50%;
+      /* 圆角也可以使用百分比 百分比相较于父元素的一半 */
+      /* 百分比一半用在元素尺寸未知的情况下 */
+      background-color: rgb(255, 180, 127);
+    }
+
+    .triangle {
+      width: 0px;
+      border-right: 100px solid transparent;
+      border-left: 100px solid transparent;
+      border-top: 100px solid transparent;
+      border-bottom: 100px solid rgb(241, 235, 78);
+    }
+  </style>
+
+  <body>
+    <div class="square" id="square1"></div>
+    <div class="square" id="square2"></div>
+    <div class="square" id="square3"></div>
+    <div class="square" id="square4"></div>
+    <div class="circle"></div>
+    <div class="triangle"></div>
+  </body>
+</html>

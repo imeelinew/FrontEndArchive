@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=script, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var gradeArr = window.prompt("输入七门成绩，用,隔开");
+        gradeArr = gradeArr.split(",");
+
+        var sum = 0;
+        for (var i = 0; i < gradeArr.length; i++) {
+            gradeArr[i] *= 1;
+            sum += gradeArr[i];
+
+            if (gradeArr[i] < 60) {
+                document.write("第" + (i + 1) + "门成绩不及格" + "<br>");
+            } else {
+                document.write("第" + (i + 1) + "门成绩及格" + "<br>");
+            }
+        }
+        document.write("总成绩是" + sum);
+
+    </script>
+</body>
+
+</html>

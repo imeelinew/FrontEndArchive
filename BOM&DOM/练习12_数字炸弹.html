@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字炸弹</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: #f5f5f5;
+        }
+        .container {
+            width: 800px;
+            height: 1200px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            margin: 10px auto;
+            border-radius: 10px;
+            overflow: hidden
+        }
+
+        .heading-section {
+            margin-top: 30px;
+        }
+
+        .heading-section h1 {
+            color: rgb(255, 85, 85);
+            text-align: center;
+        }
+
+        .heading-section p {
+            font-size: 14px;
+            color: gray;
+            text-align: center;
+        }
+
+        .heading-section div {
+            font-size: 50px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .main-section {
+            text-align: center;
+        }
+
+        .main-section .guess-scale {
+            width: 700px;
+            height: 50px;
+            margin: 0 auto;
+            background: rgb(195, 240, 255);
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 50px;
+        }
+
+        .main-section input {
+            width: 200px;
+            height: 50px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 1px solid black;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .main-section .btn {
+            width: 80px;
+            height: 50px;
+            border-radius: 10px;
+            margin-top: 20px;
+            margin-left: 10px;
+            background: red;
+            color: white;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .guess-hint {
+            width: 700px;
+            height: 50px;
+            margin: 0 auto;
+            background: rgb(219, 255, 234);
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 50px;
+            color: green;
+        }
+
+        .right-number {
+            color: red;
+            font-size: 30px;
+        }
+
+        .log-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .logItem {
+            display: block;
+            width: 800px;
+            text-align: left;
+            padding: 10px 0;
+            margin-left: 40px;
+            font-weight: bold;
+            font-size: 20px;
+            border-left: 4px solid blue;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <section class="heading-section">
+            <h1>💣数字炸弹💣</h1>
+            <p>猜出隐藏的数字炸弹,考验你的运气和策略</p>
+            <div>💣</div>
+        </section>
+        <section class="main-section">
+            <div class="guess-scale"></div>
+            <input class="inp" type="text" placeholder="输入数字">
+            <button class="btn">猜测</button>
+            <div class="guess-hint"></div>
+        </section>
+        <section class="log-section">
+            <h2>猜测记录</h2>
+        </section>
+    </div>
+
+    <script>
+        var oInp = document.getElementsByClassName("inp")[0];
+        var oBtn = document.getElementsByClassName("btn")[0];
+        var oGuessHint = document.getElementsByClassName("guess-hint")[0];
+        var oGuessScale = document.getElementsByClassName("guess-scale")[0];
+        var oLogSection = document.getElementsByClassName("log-section")[0];
+
+
+        var num1 = Math.floor(Math.random() * 100) + 1;
+        var num2 = Math.floor(Math.random() * 100) + 1;
+        var minNum = Math.min(num1, num2);
+        var maxNum = Math.max(num1, num2);
+        var answer = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+        oGuessScale.innerHTML = "范围:" + minNum + "到" + maxNum;
+
+        console.log(answer);
+
+
+        oBtn.onclick = function () {
+            var guess = oInp.value;
+            var result = "";
+            if (guess == answer) {
+                result = "猜中了！";
+                oGuessHint.innerHTML = "💣游戏结束! 炸弹数字是" + answer + "💣";
+                oGuessHint.classList.add("right-number");
+            } else if (guess > answer) {
+                result = "猜高了";
+                oGuessHint.innerHTML = "太大了";
+            } else {
+                result = "猜低了";
+                oGuessHint.innerHTML = "太小了";
+            }
+            var logItem = document.createElement("div");
+            logItem.innerText = guess + ": " + result;
+            logItem.classList.add("logItem");
+            logItem.classList.add("logItem::before");
+            oLogSection.append(logItem);
+        }
+    </script>
+</body>
+
+</html>

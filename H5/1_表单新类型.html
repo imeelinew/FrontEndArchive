@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <input type="number" max="12" min="2" step="5" value="2">
+        <input class="color-inp" type="color">
+        <input type="datetime" name="" id="">
+        <input type="range" id="range">
+        <button id="btn">按钮</button>
+    </form>
+
+    <script>
+        var oId = document.getElementById('btn');
+        var oColor = document.getElementsByClassName('color-inp')[0];
+        var oRange = document.getElementById('range');
+
+        oId.onclick = function () {
+            console.log(oColor.value);
+        }
+        oRange.onchange = function () {
+            console.log(oRange.value);
+        }
+    </script>
+</body>
+
+</html>

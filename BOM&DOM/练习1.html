@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 300px;
+            height: 300px;
+            background-color: rgba(128, 128, 128, 0.665);
+        }
+
+        .box1 {
+            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            margin-top: -150px;
+            left: 50%;
+            margin-left: -150px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            font-size: 50px;
+        }
+
+        .box1-text {
+            color: white;
+
+            line-height: 300px;
+        }
+
+        .box1-btn {
+            width: 70px;
+            height: 40px;
+            background-color: transparent;
+            border: black 1px solid;
+            border-radius: 5px;
+            position: absolute;
+            top: 50%;
+            margin-top: 35px;
+            left: 50%;
+            margin-left: -30px;
+        }
+
+        .box1-btn:hover {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <span class="box1-text">100</span>
+        <button class="box1-btn">
+            <span class="btn-text">开始</span>
+        </button>
+    </div>
+
+    <script>
+        // var i = 100;
+        // var oBox1Text = document.getElementsByClassName("box1-text")[0];
+        // var oBtn = document.getElementsByClassName("box1-btn")[0];
+
+        // oBtn.onclick = function () {
+        //     var timer = setInterval(function () {
+
+        //         i--;
+        //         oBox1Text.innerText = i;
+        //         if (i == 0) {
+        //             clearInterval(timer);
+        //         }
+        //     }, 100);
+
+        //     var oBtnText = document.getElementsByClassName("btn-text")[0];
+        //     oBtnText.innerText = "暂停";
+
+        //     oBtn.onclick = function () {
+        //         clearInterval(timer);
+        //         oBtnText.innerText = "继续";
+        //     }
+
+
+        // }
+    </script>
+</body>
+
+</html>
