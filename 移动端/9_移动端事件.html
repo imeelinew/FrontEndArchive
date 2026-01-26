@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <script>
+        var oBox = document.querySelector(".box");
+        oBox.onclick = function () {
+            console.log("PC端点击事件");
+        }
+
+        oBox.ontouchstart = function () {
+            console.log("移动端点击事件");
+        }
+
+        //结果是PC端会更慢,因为鼠标点击有300ms延迟,移动端没有
+
+        oBox.ontouchend = function () {
+            console.log("移动端抬起事件");
+        }
+        //移动端抬起时间有300ms延迟,和onclick类似
+
+        oBox.ontouchmove = function () {
+            console.log("移动端滑动事件");
+        }
+        //移动端移动事件
+    </script>
+</body>
+</html>
