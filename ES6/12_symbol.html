@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Symbol
+        let username = Symbol();
+
+        let obj = {
+            age:18,
+            school:"xxx大学",
+            // username:"李四"
+        }
+        obj[username] = "张三"
+        // obj.username = "张三"
+        console.log(obj);
+        // 获取Symbol属性值
+        console.log(obj[username]);
+
+        // Symbol 一般用作于对象的属性名 防止属性名冲突
+    </script>
+</body>
+</html>

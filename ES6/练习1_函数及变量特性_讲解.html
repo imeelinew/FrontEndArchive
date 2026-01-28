@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 第一题
+        // var n = 13;
+        // function fn(n) {
+        //     alert(n);//13
+        //     n = 14;
+        //     alert(n);//14
+        // }
+        // fn(n);
+        // alert(n);//13
+
+
+        // var n = 13;
+        // function fn(n) {
+        //    console.log(n);
+        //    var n = 6;
+        //    console.log(n);
+        // }
+        // fn(5);
+
+        // var x = 13;
+        // function fn(n) {
+        //     console.log(n);
+        //     x = 6;
+        //     console.log(x);
+
+        // }
+        // console.log(x);
+        // fn(5);
+        // console.log(x);
+
+
+        // 第二题
+        // 作用域链 当发现有变量调用的时候 先从当前作用域查找 如果没在上一层作用域查找 如果还没有再向上一层逐层查找
+        // var n = 0;
+        // function a() {
+        //     var n = 10;
+        //     function b() {
+        //         n++;
+        //         alert(n);
+        //     }
+        //     b();
+        // }
+        // a();
+        // alert(n);
+
+
+        // 第三题
+        // console.log(num, str);//undefined undefined
+        // var num = 18;
+        // var str = "lily";
+        // function fn2() {
+        //     console.log(str, num);//lily undefined
+        //     num = 19;
+        //     str = "candy";
+        //     var num = 14;
+        //     console.log(str, num);//candy 14
+        // }
+        // fn2();
+        // console.log(str, num);//candy 18
+
+
+        // 第四题
+        // fn();//2
+        // function fn() { console.log(1) };
+        // fn();//2
+        // var fn = 13;
+        // fn();//报错 因为fn已经被赋值为13了 所以不是函数了
+        // function fn() { console.log(2) };
+        // fn();//报错 因为fn已经被赋值为13了 所以不是函数了
+
+        // 第五题
+        // (function f() {
+        //     function f() { console.log(1) };
+        //     f();
+        //     function f() { console.log(2) };
+        // })();
+
+        // var foo = function(){
+        //     console.log("hello");
+        // }
+        // foo();
+        // 立即执行函数
+        // (function(){
+        //     console.log("hello");
+        // })()
+
+
+        // 第六题
+        // var a;
+        // console.log(window.a);
+        // if (!("a" in window)) {
+        //     var a = 10;
+        // }
+        // alert(a);
+        // 函数提升 在大括号中 函数声明会被提升到作用域的顶部不包含函数体
+        // console.log(fn);
+        // if (8 == 8) {
+        //     function fn() {
+        //         alert(2);
+        //     }
+        // }
+
+        // var a = 10;
+        // console.log(window.a);
+        
+
+
+        // in 运算符 可以判断一个属性是否在对象中
+        // 如果在返回true 不在返回false
+        // var obj = {
+        //     a:1,
+        //     b:2
+        // }
+        // console.log("c" in obj);
+
+
+         // 第七题
+        function fn() {
+            var i = 5;
+            return function (n) {
+                console.log(n * i++);
+            }
+        }
+        var f = fn();
+        f(4);
+        fn()(5);
+        f(6);
+        
+    </script>
+</body>
+
+</html>

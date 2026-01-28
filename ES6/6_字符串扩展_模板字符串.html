@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+
+
+    <script>
+        var oBox = document.querySelector(".box");
+        //这种很麻烦,模板字符串更好用
+        // var oH1 = document.createElement("h1");
+        // oH1.classList.add("active");
+        // oH1.textContent = "hello world";
+        // oBox.appendChild(oH1);
+        var str = "hello world";
+        oBox.innerHTML = `<h1 class="active">${str}</h1>`;
+
+
+        //startwith
+        console.log(str.startsWith("hello"));
+        //endwith
+        console.log(str.endsWith("world"));
+        //includes
+        console.log(str.includes("world"));
+        //repeat
+        console.log(str.repeat(3));
+
+        //padstart
+        console.log(str.padStart(15, "*"));
+        //padend
+        console.log(str.padEnd(15, "*"));
+
+        //trimstart and trimend
+        str2 = " hello world ";
+        console.log(str2.trimStart());
+        console.log(str2.trimEnd());
+        console.log(str2.trim());
+    </script>
+</body>
+
+</html>

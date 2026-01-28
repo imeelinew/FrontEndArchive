@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ========== 1. 进制表示 [ES6新增] ==========
+        console.log('\n--- 1. 进制表示 ---');
+        console.log(0b1010);      // 二进制 0b开头 → 10
+        console.log(0o17);        // 八进制 0o开头 → 15
+        console.log(0xff);        // 十六进制 0x开头 → 255
+
+        // ========== 2. Number 新方法 [ES6新增] ==========
+        console.log('\n--- 2. Number 新方法 ---');
+        // Number.isFinite() 是否有限数
+        console.log(Number.isFinite(100));      // true
+        console.log(Number.isFinite(Infinity)); // false
+
+        // Number.isNaN() 是否NaN（比全局isNaN更严格）
+        console.log(Number.isNaN(NaN));         // true
+        console.log(Number.isNaN('NaN'));       // false（不做类型转换）
+
+        // Number.isInteger() 是否整数
+        console.log(Number.isInteger(5));       // true
+        console.log(Number.isInteger(5.0));     // true
+        console.log(Number.isInteger(5.1));     // false
+
+        // Number.parseInt/parseFloat 移植到Number对象
+        console.log(Number.parseInt("123px"));    // 123
+        console.log(Number.parseFloat("3.14m"));  // 3.14
+
+        // ========== 3. Math 扩展 [ES6新增] ==========
+        console.log('\n--- 3. Math 扩展 ---');
+        console.log(Math.trunc(4.9));    // 去除小数 → 4
+        console.log(Math.sign(-5));      // 判断正负 → -1 (正1/零0/负-1)
+        console.log(Math.cbrt(8));       // 立方根 → 2
+        console.log(Math.hypot(3, 4));   // 勾股定理 → 5
+
+        // ========== 4. 幂运算符 ** [ES7新增] ==========
+        console.log('\n--- 4. 幂运算符 ** ---');
+        console.log(2 ** 3);             // 等同 Math.pow(2,3) → 8
+        let n = 2; n **= 3;              // 2的3次方 → 8
+
+        // ========== 5. 安全整数 [ES6新增] ==========
+        console.log('\n--- 5. 安全整数 ---');
+        // JS精确表示范围: -(2^53-1) ~ (2^53-1)
+        console.log(Number.MAX_SAFE_INTEGER);  // 9007199254740991
+        console.log(Number.isSafeInteger(99)); // true
+
+        // ========== 6. BigInt 大整数 [ES2020新增] ==========
+        console.log('\n--- 6. BigInt 大整数 ---');
+        // 解决超出安全整数范围的精度问题
+        let big1 = 123456789012345678901234567890n;  // 字面量加n
+        let big2 = BigInt("999999999999999999999");  // 构造函数
+        console.log(big1 + big2);                    // BigInt运算
+        console.log(typeof big1);                    // "bigint"
+
+        // 注意事项
+        // console.log(10n + 5);  // ❌ 不能与Number混合运算
+        console.log(10n + BigInt(5));  // ✅ 需先转换
+        console.log(Number(10n) + 5);  // ✅ 或转回Number
+
+        // ========== 7. 隐式类型转换 [ES5已有] ==========
+        console.log('\n--- 7. 隐式类型转换 ---');
+        // 转数字: + - * / %
+        console.log(+'123');        // 123 (一元+最简洁)
+        console.log('10' - 0);      // 10
+        console.log('5' * 2);       // 10
+        console.log('6' / 2);       // 3
+
+        // 转字符串: + 拼接
+        console.log(123 + '');      // "123"
+        console.log(true + '');     // "true"
+
+        // 转布尔: !! 或条件判断
+        console.log(!!'hello');     // true
+        console.log(!!0);           // false
+        // 假值: 0, '', null, undefined, NaN, false
+
+        // 特殊情况
+        console.log(1 + '2');       // "12" (优先字符串拼接)
+        console.log(1 - '2');       // -1   (减法强制转数字)
+        console.log([] + []);       // ""   (数组转空字符串)
+        console.log([] + {});       // "[object Object]"
+    </script>
+</body>
+
+</html>

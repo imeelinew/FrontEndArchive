@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let objVal = "age";
+        // let age = 18;
+        // 如果对象中属性名和变量名相同 可以直接写属性名 不需要写 :变量名
+        // 对象中定义方法可以直接写方法名 不需要写 :function
+        // let obj = {
+        //     age,
+        //     school:"xxx大学",
+        //     username:"李四",
+        //     talk(){
+        //         console.log("我在说话");
+        //     }
+        // }
+        // obj.objVal = 18;
+
+        // 动态添加属性 可以使用变量来添加属性 写在[]内 []内可以写一写简单的表达式
+        // obj[objVal] = 18;
+        // obj[objVal+"2"] = 20;
+        // console.log(obj);
+
+
+        let obj2 = {
+            age:20,
+            school:"xxx大学"
+        }
+
+        let obj3 = {
+            age:20,
+            school:"xxx大学"
+        }
+        let obj4 = obj3;
+
+        let a = "hello";
+        let b = "hello";
+        // Object.is 判断的是栈内存中的值
+        // console.log(Object.is(a,b));
+        // console.log(obj2 == obj3);
+
+        let obj5 = {
+            username:"张三",
+            age:30
+        }
+        // 对象的一个合并 最前面的对象作为接收方 会把后边所有对象的属性合并到第一个对象中 
+        // 如果对象有属性冲突后边对象会覆盖前边对象的属性
+        Object.assign(obj2,obj5);
+        console.log(obj2);
+        // in 判断对象中是否包含指定的属性 判断的属性需要加""
+        // console.log("age2" in obj5);
+
+        // for ... in 可以遍历对象 默认遍历值是 属性名
+        for( let keys in obj2 ){
+            console.log(keys);
+            console.log(obj2[keys]);
+        }
+
+        // keys() 可以把对象中所有属性名拼合成数组返回
+        console.log(Object.keys(obj2));
+    </script>
+</body>
+</html>

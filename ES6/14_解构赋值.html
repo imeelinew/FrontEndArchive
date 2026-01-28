@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let arr = ["hello","world","你好","世界"];
+        // let str1 = arr[0];
+        // let str2 = arr[1];
+        // let str3 = arr[2];
+        // 数组解构赋值 可以从数组中提取值，按照对应位置，对变量赋值。
+        // let [str1,str2,str3] = arr;
+        // console.log(str1,str2,str3);
+
+
+        // let obj = {
+        //     school:"清华大学",
+        //     age:18,
+        //     sex:"男",
+        //     name:"李四"
+        // }
+        // let name = obj.name;
+        // let age = obj.age;
+        // let sex = obj.sex;
+        // 对象解构赋值 可以从对象中提取值，按照对应属性，对变量赋值。
+        // 如果对象中没有该属性，就会使用默认值 如果有，就会使用对象中的值
+        // let {name="张三",age,sex} = obj;
+        // console.log(name,age,sex);
+
+        // 字符串结构
+        // let str = "hello";
+        // let [a,b,c,d,e] = str;
+        // console.log(a,b,c,d,e);
+
+
+
+        // 函数参数解构赋值
+        // function foo([a,b,c]){
+        //     console.log(a,b,c);
+        // }
+
+        // foo([1,2,3])
+
+        // function foo({a,b,c=4}){
+        //     console.log(a,b,c);
+        // }
+        // foo({a:1,b:2})
+
+        function foo(){
+            return {a:1,b:2,c:3}
+        }
+        let {a,b,c} = foo();
+        console.log(a,b,c);
+    </script>
+</body>
+</html>

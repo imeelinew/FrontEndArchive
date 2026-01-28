@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //深拷贝实现方式
+
+        function deepClone(source) {
+            //如果传递过来的是基本数据类型,不用拆解直接返回
+            if (source === null || typeof source !== 'object') {
+                return source;
+            }
+
+            //处理数组
+            if (Array.isArray(source)) {
+                let result = [];
+                for (let i = 0; i < source.length; i++) {
+                    result[i] = deepClone(source[i]);
+                }
+                return result;
+            }
+
+            //处理对象
+            let result = {};
+            for (let key in source) {
+                if (source.hasOwnProperty(key)) {
+                    result[key] = deepClone(source[key]);
+                }
+            }
+            return result;
+
+        }
+
+        let obj = { a: 1, b: { c: 2 } };
+        let obj2 = deepClone(obj);
+
+        obj.b.c = 999;
+        console.log(obj2);
+        
+    </script>
+</body>
+
+</html>

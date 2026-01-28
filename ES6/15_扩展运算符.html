@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 扩展运算符
+        // 1. 数组的扩展运算符 可以把数组中的值逐一取出
+        let arr = [1,2,3,4,5];
+        console.log(...arr);
+        let arr2 = [6,7,8];
+        let arr3 = [...arr,"a",...arr2];
+        console.log(arr3);
+        // 2. 字符串的扩展运算符 可以把字符串中的值逐一取出
+        let str = "hello";
+        console.log(...str);
+        
+
+        // function foo(...arg){
+            // arguments 类数组对象 负责接收参数 
+            // 扩展运算符可以扩展类数组
+            // console.log(...arguments)
+
+        //     console.log(arg);
+        // }
+        // foo(1,2,3,4,5,6)
+
+
+        // 如果通过扩展运算接收后半部份不确定的参数 那么称为剩余运算符 剩余参数
+        // function foo(a,b,...arg){
+        //     console.log(a,b,arg);
+        // }
+        // foo(1,2,3,4,5,6)
+
+
+        // 扩展对象
+        let obj = {
+            name:"张三",
+            age:18,
+            sex:"男"
+        }
+        // let obj2 = obj;
+        let obj2 = {...obj,school:"清华大学"};
+        obj.name = "李四";
+        console.log(obj2);
+        
+        
+    </script>
+</body>
+</html>

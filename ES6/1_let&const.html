@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //let是新的定义变量方式,不允许重复定义同一个变量
+        // let a = 10;
+        // let a = 20;
+
+        // b = 10;
+        // let b;
+        //不允许,必须先定义后使用
+
+        //变量提升
+        console.log(c); //undefined,因为只拿走了 var c的声明部分,没有赋值
+        var c = 20;
+        //var存在变量提升,在代码执行之前,会把变量声明提升到作用域代码顶部
+        //let不存在变量提升,必须先定义后使用
+
+        //函数也能提升
+        console.log(fn()); //20
+        function fn(){
+            return 20;
+        }
+        //二者同时,变量提升优先级更高
+
+        // let能解决变量提升问题,不存在变量提升
+        // const定义常量,一旦定义,值不能修改
+
+
+        //let定义的变量不会挂载在window对象上
+        let d = 30;
+        console.log(window.d); //undefined
+
+    </script>
+</body>
+</html>

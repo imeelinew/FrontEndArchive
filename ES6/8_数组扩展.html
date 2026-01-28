@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3,4,5];
+        let resArr = arr.map(function(item,index,arr){
+            return item * 2;
+        })
+        console.log(resArr);
+
+
+        // filter
+        let resArr2 = arr.filter(function(item,index,arr){
+            return item > 3;
+        })
+        console.log(resArr2);
+
+        //some
+        let resArr3 = arr.some(function(item,index,arr){
+            return item > 3;
+        })
+        console.log(resArr3);
+    </script>
+</body>
+</html>

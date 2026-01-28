@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <script>
+        let aLi = document.querySelectorAll("li");
+        console.log(aLi)
+        // Array.from() 可以将类数组对象转换为数组
+        let aLiArr = Array.from(aLi);
+        aLiArr.push("5");
+        console.log(aLiArr);
+        // Array.of() 可以将一组值转换为数组
+        let arr1 = Array.of(1,2,3,4,5);
+        console.log(arr1);
+
+        let arr2 = new Array(5);
+        // fill() 可以将数组的指定范围填充为指定的值 不包括结束索引
+        // 括号中有三个参数 第一个参数是要填充的值 第二个参数是开始索引 第三个参数是结束索引
+        arr2.fill("1",0,3);
+        console.log(arr2);
+    </script>
+</body>
+</html>

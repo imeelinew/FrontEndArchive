@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 第一题
+        var n = 13;
+        function fn(n) {
+            alert(n);//
+            n = 14;
+            alert(n);
+        }
+        fn(n);
+        alert(n)
+        // 13 14 13 
+
+        // 第二题
+        //作用域链 当发现有变量调用的时候 先从当前作用域查找 如果没在上一层作用域查找 如果还没有再向上一层逐层查找
+        var n = 0;
+        function a() {
+            var n = 10;
+            function b() {
+                n++;
+                alert(n);
+            }
+            b();
+        }
+        a();
+        alert(n);
+        //11 0
+
+        // 第三题
+        console.log(num, str);
+        var num = 18;
+        var str = "lily";
+        function fn2() {
+            console.log(str, num);
+            num = 19;
+            str = "candy";
+            var num = 14;
+            console.log(str, num);
+        }
+        fn2();
+        console.log(str, num);
+        //undefined undefined
+        //18 lily
+        //candy 14
+        //18 lliy
+        // 
+        // undefined undefined
+        // 练习1测试.html:16 lily undefined
+        // 练习1测试.html:20 candy 14
+        // 练习1测试.html:23 candy 18
+        // 练习1测试.html:53 Live reload enabled.
+
+
+        // 第四题
+        //后提升的函数会在更上面
+        fn();
+        function fn() { console.log(1) };
+        fn();
+        var fn = 13;
+        fn();
+        function fn() { console.log(2) };
+        fn();
+        //2 2 TypeError: fn is not a function
+
+        // 第五题
+        (function f() {
+            function f() { console.log(1) };
+            f();
+            function f() { console.log(2) };
+        })();
+        //立即执行函数,不用调用直接执行
+
+        // 第六题
+        if (!("a" in window)) {
+            var a = 10;
+        }
+        alert(a);
+        console.log(fn);
+        if (9 == 8) {
+            function fn() {
+                alert(2);
+            }
+        }
+
+        // 第七题
+        function fn() {
+            var i = 5;
+            return function (n) {
+                console.log(n * i++);
+            }
+        }
+        var f = fn();
+        f(4);
+        fn()(5);
+        f(6);
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //闭包 函数嵌套函数 外层函数返回内层函数
+        //保护变量不被销毁
+        function fn() {
+            var n = 10;
+            return function () {
+                alert(n++);
+            }
+        }
+        var f = fn();
+        f();
+        f();
+        f();
+
+    </script>
+</body>
+
+</html>

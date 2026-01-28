@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let str = "hello";
+      let num = 10;
+      let bool = true;
+      let und = undefined;
+      let nul = null;
+      let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      let obj = { a: 10 };
+      let fun = function () {
+        console.log("hello");
+      };
+
+      // typeof运算符
+      //typeof有局限,只能判断基本数据类型
+      //一般用作除了null之外的数据类型判断
+      console.log(typeof str); //string
+      console.log(typeof num); //number
+      console.log(typeof bool); //boolean
+      console.log(typeof und); //undefined
+      console.log(typeof nul); //object
+      console.log(typeof arr); //object
+      console.log(typeof obj); //object
+      console.log(typeof fun); //function
+
+      console.log("----------------------------------");
+
+      //instanceof运算符
+      console.log(str instanceof String); //false
+      console.log(num instanceof Number); //false
+      console.log(bool instanceof Boolean); //false
+      console.log(und === undefined); //true (undefined只能用===判断)
+      console.log(nul === null); //true (null只能用===判断)
+      console.log(arr instanceof Array); //true
+      console.log(obj instanceof Object); //true.
+      console.log(fun instanceof Function); //true
+
+      console.log("----------------------------------");
+
+      //constructor属性
+      //通过构造函数的constructor属性判断数据类型
+      console.log(str.constructor === String); //true
+      console.log(num.constructor === Number); //true
+      console.log(bool.constructor === Boolean); //true
+      //console.log(und.constructor); //报错,undefined没有constructor
+      //console.log(nul.constructor); //报错,null没有constructor
+      console.log(arr.constructor === Array); //true
+      console.log(obj.constructor === Object); //true
+      console.log(fun.constructor === Function); //true
+
+      console.log("----------------------------------");
+
+      //null类型很难判断,但是ES5中有的下面的东西可以判断,实际上可以判断所有类型,不过结果需要处理一下
+      //通过Object.prototype.toString.call()方法
+      console.log(Object.prototype.toString.call(str)); // [object String]
+      console.log(Object.prototype.toString.call(num)); // [object Number]
+      console.log(Object.prototype.toString.call(bool)); // [object Boolean]
+      console.log(Object.prototype.toString.call(und)); // [object Undefined]
+      console.log(Object.prototype.toString.call(nul)); // [object Null]
+      console.log(Object.prototype.toString.call(arr)); // [object Array]
+      console.log(Object.prototype.toString.call(obj)); // [object Object]
+      console.log(Object.prototype.toString.call(fun)); // [object Function]
+
+      //判断数组
+      console.log(Array.isArray(arr)); //true
+    </script>
+  </body>
+</html>

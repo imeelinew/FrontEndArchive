@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">hello</div>
+    <script>
+        // this 指向事件绑定的元素 谁调用当前函数 就指向谁
+        // let box = document.querySelector(".box");
+        // box.onclick = function(){
+        //     console.log(this);
+        // }
+
+        // let obj = {
+        //     name:"张三",
+        //     age:18,
+        //     sex:"男",
+        //     say(){
+        //         console.log(this.name);
+        //     }
+        // }
+        // // 调用obj的say方法 指向obj
+        // obj.say();
+
+        // 调用say方法 指向window 对象 函数前没有加任何调用者 指向window
+        // function say(){
+        //     console.log(this);
+        // }
+        // say();
+
+        // let obj = {
+        //     name:"张三",
+        //     age:18,
+        //     sex:"男",
+        //     say(){
+        //         console.log(this);
+        //         function foo(){
+        //             console.log(this);
+        //         }
+        //         foo();
+        //     }
+        // }
+        // obj.say();
+
+        // window.setTimeout(function(){
+        //     console.log(this);
+        // },1000)
+
+        var name1 = "李四";
+        let obj = {
+            name1:"张三",
+            age:18,
+            sex:"男"
+        }
+        console.log(window.name1);
+        function say(a,b){
+            console.log(a,b,this.name1);
+        }
+        // 改变this指向 call( ) apply() bind()
+        // call() 方法调用一个对象。简单理解为调用函数的方式，但是它可以改变函数的 this 指向 
+        // call() 第一个参数是this指向的对象，后面的参数是函数调用的参数
+        // say.call(obj,1,2);
+
+        // apply() 方法调用一个对象。简单理解为调用函数的方式，但是它可以改变函数的 this 指向 
+        // apply() 第一个参数是this指向的对象，后面的参数是函数调用的参数 以数组的形式传递
+        // say.apply(obj,[3,4]);
+
+        // bind() 可以实现改变this的方法 
+        // 使用后并不会立即执行函数 需要手动调用
+        // bind的参数部分与call参数一致
+        let foo = say.bind(obj,1,2); 
+        // 手动调用
+        foo();
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //map是一种新的数据结构，类似于对象，但是map中的键可以是任何类型（对象的键只能是字符串）
+        let map = new Map();
+
+        //set() 添加键值对
+        map.set("name", "张三");
+        map.set(1, "数字键");
+        map.set(true, "布尔键");
+        let obj = { a: 1 };
+        map.set(obj, "对象也可以作为键");
+        console.log(map);
+
+        //map中的key是唯一的，重复的key会覆盖之前的值
+        map.set("name", "李四"); //覆盖之前的"张三"
+        console.log(map.get("name")); //"李四"
+
+        //get() 根据键获取值
+        console.log(map.get("name")); //"张三"
+        console.log(map.get(1)); //"数字键"
+        console.log(map.get(obj)); //"对象也可以作为键"
+
+        //has() 判断某个键是否存在
+        console.log(map.has("name")); //true
+        console.log(map.has("age")); //false
+
+        //size 获取键值对的个数
+        console.log(map.size); //4
+
+        //delete() 删除某个键值对
+        map.delete(true);
+        console.log(map.size); //3
+
+    </script>
+</body>
+
+</html>
