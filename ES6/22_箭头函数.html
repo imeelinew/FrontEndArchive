@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function foo(){
+        //     // ...
+        // }
+        // let foo2 = function(){
+        //     // ...
+        // }
+
+        // let foo3 = (a)=>{
+        //     console.log("hello",a);
+        // }
+        // foo3(1);
+
+
+        // let foo4 = ()=>{
+        //     console.log(this);
+        // }
+        // foo4();
+
+        // 箭头函数中的this指向的是定义时的上下文 而不是调用时的上下文
+        // 箭头函数内没有this
+        // let obj = {
+        //     a:1,
+        //     b:this,
+        //     foo(){
+        //         console.log(this);
+        //         // function foo5(){
+        //         //     console.log(this);
+        //         // }
+
+        //         let foo5 = ()=>{
+        //             console.log(this);
+        //         }
+        //         foo5()
+        //     },
+        //     foo2:()=>{
+        //         // console.log(this);
+        //     }
+        // }
+        // // console.log(obj.b);
+        // obj.foo();
+        // obj.foo2();
+
+
+        // function foo6(){
+        //     console.log(arguments);
+        // }
+
+        // foo6(1,2,3,4,5,6)
+
+        // 箭头函数内没有arguments
+        // let foo7 = (...arg)=>{
+        //     // console.log(arguments)
+        //     console.log(arg);
+        // }
+        // foo7(1,2,3,4,5,6)
+
+        // 箭头函数可以省略大括号 当箭头函数只有一条语句时 可以省略大括号 并且语句的执行结果就是函数的返回值
+        // let foo8 = ()=> 10;
+        // let res = foo8();
+        // console.log(res);
+
+
+
+    </script>
+</body>
+</html>

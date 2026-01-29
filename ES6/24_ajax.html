@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ajax 异步请求
+        // 第一步 实例化一个XMLHttpRequest对象
+        let xhr = new XMLHttpRequest();
+        // 第二步 调用open方法 配置请求参数
+        // open方法参数说明
+        // 第一个参数：请求方法 GET/POST
+        // 第二个参数：请求地址
+        // 第三个参数：是否异步 true/false
+        xhr.open('GET',"https://api.thecatapi.com/v1/images/search",true);
+        // 第三步 调用send方法 发送请求
+        xhr.send();
+        // 第四步 监听状态变化
+        xhr.onreadystatechange = function(){
+            // 状态码 0 1 2 3 4
+            // 0: 请求未初始化 1: 服务器连接已建立 2: 请求已接收 3: 请求处理中 4: 请求已完成，且响应已就绪
+            if(xhr.readyState == 4){
+                // 状态码 200 表示请求成功
+                if(xhr.status == 200){
+                    // 响应体
+                    // console.log(xhr.responseText);
+                    // 解析JSON字符串 转换为对象 调用JSON.parse方法
+                    let jsonObj = JSON.parse(xhr.responseText);
+                    console.log(jsonObj);
+                    // 访问对象属性
+                    console.log(jsonObj[0].url);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

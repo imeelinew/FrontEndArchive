@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // JSON 字符串 是一种轻量级的数据交换格式 字符串中放置了一个对象
+        // 因为在前端后端数据交互中 通常使用JSON字符串来传递数据 http请求中只能使用字符串
+        // let jsonStr = '{"name":"张三","age":18}';
+        // console.log(jsonStr);
+        // 解析JSON字符串 转换为对象 调用JSON.parse方法
+        // let jsonObj = JSON.parse(jsonStr);
+        // console.log(jsonObj);
+
+        let obj = {
+            name:"张三",
+            age:18
+        }
+        // 将对象转换为JSON字符串 调用JSON.stringify方法
+        let jsonStr = JSON.stringify(obj);
+        console.log(jsonStr);
+    </script>
+</body>
+</html>
