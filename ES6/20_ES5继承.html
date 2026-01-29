@@ -7,16 +7,46 @@
 </head>
 <body>
     <script>
-        //创建构造函数
+        // let timer = new Date();
+        // console.log(timer.getFullYear());
+
+        // 创建构造函数
         function Person(name,age){
-            //初始化属性 一般都是写在构造函数里
-            this.type = "human";
+            // 初始化属性 一般都是写在构造函数中
+            this.type = "人";
+            // 保存构造函数传递参数
+            this.name = name;
+            this.age = age;
+        }
+        // 构造函数的方法一般写在原型对象中
+        Person.prototype.say = function(){
+            console.log(`我是${this.name},我今年${this.age}岁,我是一个人`);
+        }
+        // 通过new关键字创建一个实例对象
+        // let p1 = new Person("张三",18);
+        // console.log(p1.type);
+        // p1.say();
+
+
+        // 构造函数继承
+        function Student(name,age,school){
+            // 调用父类构造函数
+            Person.call(this,name,age);
+            // 初始化属性
+            this.school = school;
+        }
+        // 子类的方法
+        Student.prototype = new Person();
+        // 修复constructor指向问题
+        Student.prototype.constructor = Student;
+        Student.prototype.saySchool = function(){
+            console.log(`我是${this.name},我今年${this.age}岁,我是一个人,我去${this.school}上学`);
         }
 
-        //通过new关键字创建一个实例对象
-        let p1 = new Person();
-        console.log(p1.type);
-        
+        let s1 = new Student("李四",18,"清华大学");
+        // s1.say();
+        s1.saySchool();
+        console.log(s1.constructor);
     </script>
 </body>
 </html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义一个类
+        class Person{
+            // 构造函数
+            constructor(name,age){
+                // 初始化属性
+                this.name = name;
+                this.age = age;
+            }
+             // 方法
+             say(){
+                console.log(`我是${this.name},我今年${this.age}岁`);
+             }
+        }
+        // let p1 = new Person("张三",18);
+        // p1.say();
+
+        // 类的继承
+        class Student extends Person{
+            constructor(name,age,school){
+                // 调用父类构造函数
+                super(name,age);
+                // 初始化属性
+                this.school = school;
+            }
+             // 方法
+             saySchool(){
+                console.log(`我是${this.name},我今年${this.age}岁,我是一个人,我去${this.school}上学`);
+             }
+        }
+
+        let s1 = new Student("李四",18,"清华大学");
+        s1.say();
+        s1.saySchool();
+    </script>
+</body>
+</html>

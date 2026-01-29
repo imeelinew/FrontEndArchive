@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //js 是单线程的 分为 同步任务和异步任务
+        //同步任务按照顺序执行 上一个没执行完下一个无法执行
+        //异步任务 不会阻塞后续任务执行 会进入到 任务队列
+
+        console.log(3);
+        
+        setTimeout(function(){
+            console.log(2);
+        },0)
+        console.log(1);
+        //结果是 321
+        //setTimeout是异步任务,不管等多久直接扔到任务队列,优先执行同步任务
+    </script>
+</body>
+</html>

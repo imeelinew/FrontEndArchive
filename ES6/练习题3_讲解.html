@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1、写出下列输出结果
+        // var x = 10;
+        // function test() {
+        //     var x = 20
+        //     console.log(this.x)//10
+        // }
+        // test()
+
+        //2、写出下列输出结果
+        // var name = "window"
+        // var obj = {
+        //     name: "obj",
+        //     func1: function () {
+        //         console.log(this.name);//obj
+        //         (function () {
+        //             console.log(this.name)//window
+        //         })()
+        //     }
+        // }
+        // obj.func1()
+
+        //3、写出下列结果
+        // var name = "the window";
+        // var object = {
+        //     name: "My Object",
+        //     getName: function () {
+        //         return this.name;
+        //     }
+        // }
+
+        // console.log(object.getName());//My Object
+        // console.log((object.getName)());//My object
+        // console.log((object.getName = object.getName)());//the window
+
+        // console.log(object.getName);
+        // let foo = function () {
+        //         return this.name;
+        //     };
+        // console.log(foo());
+        // var a = 10;
+        // var b = 20;
+        // if(a = b){
+        //     console.log("true");
+        // }
+
+
+        //4、下列代码中当div的点击事件触发时输出的结果是？
+        // document.getElementById("div").onclick = function () {
+        //     console.log(this)//div
+        // };
+
+
+        //5、请写出下列代码运行结果
+        // var name = "window"
+        // var obj = {
+        //     name: "obj"
+        // }
+        // setInterval(function () {
+        //     console.log(this.name)//每隔300ms输出window
+        // }, 300)
+        // setInterval(function () {
+        //     console.log(this.name)//输出一次obj
+        // }.call(obj), 300)
+
+
+        //6、请补全下列代码
+        // function foo() {
+        //     //补全此处代码实现每隔一秒输出 hello world
+        //     // console.log("hello world");
+        //     return function(){
+        //         console.log("hello world");
+        //     }
+        // }
+        // window.setInterval(foo(), 1000);
+
+        // 7、补全下列代码实现 1+2+3+4
+        function add(c, d) {
+            return this.a + this.b + c + d;
+        }
+
+        // var obj = {
+        //     a: 1,
+        //     b: 2
+        // }
+        // var res = add.call(obj, 3, 4);
+
+        // var a = 1;
+        // var b = 2;
+        // var res = add(3,4);
+        // console.log(res);//10
+
+        //8、写出下列输出结果
+        // function f() {
+        //     return this.a;
+        // }
+
+        // // bind 方法只能绑定一次 不能再次绑定 如果出现多次绑定 以最第一次绑定为准
+        // var g = f.bind({ a: "azerty" });
+        // console.log(g());//azerty
+
+        // var h = g.bind({ a: 'yoo' });
+        // console.log(h());//azerty
+
+        // var o = { a: 'loveCoding', f: f, g: g, h: h };
+        // console.log(o.f(), o.g(), o.h());//loveCoding azerty azerty
+
+
+        //9、补全下列代码
+        // var o = { prop: 'loveCoding' };
+
+        // function independent() {
+        //     return this.prop;
+        // }
+        // //在此补全代码
+        // o.f = independent;
+        // console.log(o.f()); //  loveCoding
+
+        //10、用call 或 apply 实现bind 方法
+        function foo(i,j) {
+            console.log(this.a,i,j)
+        }
+        // function fo2(){
+
+        //     console.log(this.a);
+            
+        // }
+        var obj = {
+            a: "hello"
+        }
+
+        // 在函数对象（Function）下添加一个bind2方法
+        Function.prototype.bind2 = function(context){
+            let _this = this;
+            // console.log(arguments);
+            // let arg = Array.from(arguments).slice(1);
+            var arg = Array.prototype.slice.call(arguments,1);
+            // console.log(arg);
+            return function(){
+                // _this.call(context,...arg);
+                _this.apply(context,arg);
+            }
+        }
+
+
+        var foo2 = foo.bind2(obj,1,2);
+        // var foo3 = fo2.bind2(obj);
+        foo2()
+        // foo3()
+    </script>
+</body>
+
+</html>
