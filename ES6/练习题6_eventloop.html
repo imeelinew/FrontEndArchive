@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 第一题
+        // 132
+
+        console.log('1');
+        setTimeout(function () {
+            console.log('2');
+        }, 0);
+        console.log('3');
+
+        // 第二题
+        //15423
+
+        console.log('1');
+        setTimeout(function () {
+            console.log('2');
+            Promise.resolve().then(function () {
+                console.log('3');
+            });
+        }, 0);
+        Promise.resolve().then(function () {
+            console.log('4');
+        });
+        console.log('5');
+
+        // 第三题
+        //1 5 4microtask 2microtask 3microtask
+        console.log('1');
+        setTimeout(() => {
+            console.log('2 - Macro Task');
+            Promise.resolve().then(() => console.log('3 - Micro Task'));
+        }, 0);
+        Promise.resolve().then(() => console.log('4 - Micro Task'));
+        console.log('5');
+
+        // 第四题
+        //start promise4 end promise5 timeout5
+        console.log('Start');
+        setTimeout(() => {
+            console.log('Timeout 5');
+        }, 100);
+        new Promise((resolve) => {
+            console.log('Promise 4');
+            resolve();
+        }).then(() => {
+            console.log('Promise 5');
+        });
+        console.log('End');
+
+        // 第五题
+        //start 01234 timeout 2
+        console.log('Start');
+        setTimeout(() => {
+            console.log('Timeout 2');
+        }, 100);
+        for (let i = 0; i < 5; i++) {
+            console.log(i);
+        }
+
+        // 第六题
+        //Start Async1 Promise8 End Async2 Timeout7
+        console.log('Start');
+        setTimeout(() => {
+            console.log('Timeout 7');
+        }, 0);
+        async function asyncFunc() {
+            console.log('Async 1');
+            await new Promise((resolve) => {
+                console.log('Promise 8');
+                resolve();
+            });
+            console.log('Async 2');
+        }
+        asyncFunc();
+        console.log('End');
+    </script>
+</body>
+
+</html>

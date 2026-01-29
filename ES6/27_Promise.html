@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./js/ajax.js"></script>
+    <script>
+        // Primise es6中提出的 异步优化处理方案
+        // 一般用作于解决回调地狱问题（回调函数逐层嵌套带来的代码可读性差）
+        // promise 会接收两个参数 一个是成功的回调函数 第二个是失败的回调函数
+        // promise 对应两个回调函数 。then() 方法处理成功 和 catch() 方法处理失败。
+        // new Promise(function(resolve,reject){
+        //     setTimeout(function(){
+        //         // resolve("成功");
+        //         reject("失败");
+        //     },1000)
+        // }).then(function(res){
+        //     console.log(res);
+        // }).catch(function(err){
+        //     console.log(err);
+        // })
+
+        // let pro1 = new Promise(function(resolve,reject){
+        //     setTimeout(function(){
+        //         resolve("成功");
+        //     },1000)
+        // })
+
+
+        // pro1.then(function(res){
+        //     console.log(res);
+        // }).catch(function(err){
+        //     console.log(err);
+        // })
+
+        // let pro1 = new Promise(function(resolve,reject){
+        //     ajax("GET","./data/a.json",function(res){
+        //         resolve(res);
+        //     })
+        // })
+
+        // pro1.then(function(res){
+        //     console.log(res);
+        // })
+
+        // promise.all() 方法 接收一个数组参数 数组中包含多个promise对象
+        // 只有当数组中的所有promise对象都成功时 才会调用then()方法
+        // 只要有一个promise对象失败 就会调用catch()方法
+
+        // let pro1 = new Promise(function(resolve,reject){
+        //     ajax("GET","./data/a.json",function(res){
+        //         reject(res);
+        //     })
+        // })
+
+        // let pro2 = new Promise(function(resolve,reject){
+        //     ajax("GET","./data/b.json",function(res){
+        //         resolve(res);
+        //     })
+        // })
+
+        // let pro3 = new Promise(function(resolve,reject){
+        //     ajax("GET","./data/c.json",function(res){
+        //         resolve(res);
+        //     })
+        // })
+        // 当所有promise对象都成功时 会返回一个数组 数组中包含所有promise对象的成功结果
+        // Promise.all([pro1,pro2,pro3]).then(function(res){
+        //     console.log(res);
+        // }).catch(function(err){
+        //     console.log(err);
+        // })
+
+
+        // Promise.race() 方法 接收一个数组参数 数组中包含多个promise对象
+        // 如果第一个promise对象成功 就会调用then()方法
+        // 如果第一个promise对象失败 就会调用catch()方法
+        // Promise.race([pro1,pro2,pro3]).then(function(res){
+        //     console.log(res);
+        // }).catch(function(err){
+        //     console.log("失败",err);
+        // })
+
+
+        // promise 有三种状态
+        // 1. 等待状态（pending）
+        // 2. 成功状态（fulfilled）
+        // 3. 失败状态（rejected）
+
+
+
+        // Promise.resolve() 方法 会返回一个成功的promise对象
+        // Promise.reject() 方法 会返回一个失败的promise对象
+
+        Promise.resolve("成功").then(function(res){
+            console.log(res);
+        })
+
+        Promise.reject("失败").catch(function(err){
+            console.log(err);
+        })
+
+        
+    </script>
+</body>
+</html>
